@@ -1,0 +1,52 @@
+code	dem	rep	fips	votes	abbreviation	name
+AK	0.001	0.999	02	3	Alaska	Alaska
+AL	0.000	1.000	01	9	Ala.	Alabama
+AR	0.000	1.000	05	6	Ark.	Arkansas
+AZ	0.033	0.967	04	11	Ariz.	Arizona
+CA	1.000	0.000	06	55	Calif.	California
+CO	0.646	0.354	08	9	Colo.	Colorado
+CT	0.999	0.001	09	7	Conn.	Connecticut
+DC	1.000	0.000	11	3	D.C.	District of Columbia
+DE	0.999	0.001	10	3	Del.	Delaware
+FL	0.449	0.551	12	29	Fla.	Florida
+GA	0.003	0.997	13	16	Ga.	Georgia
+HI	1.000	0.000	15	4	Hawaii	Hawaii
+IA	0.788	0.212	19	6	Iowa	Iowa
+ID	0.000	1.000	16	4	Idaho	Idaho
+IL	1.000	0.000	17	20	Ill.	Illinois
+IN	0.001	0.999	18	11	Ind.	Indiana
+KS	0.001	0.999	20	6	Kan.	Kansas
+KY	0.000	1.000	21	8	Ky.	Kentucky
+LA	0.000	1.000	22	8	La.	Louisiana
+MA	1.000	0.000	25	11	Mass.	Massachusetts
+MD	1.000	0.000	24	10	Md.	Maryland
+ME	0.998	0.002	23	4	Me.	Maine
+MI	0.986	0.014	26	16	Mich.	Michigan
+MN	0.985	0.015	27	10	Minn.	Minnesota
+MO	0.005	0.995	29	10	Mo.	Missouri
+MS	0.000	1.000	28	6	Miss.	Mississippi
+MT	0.019	0.981	30	3	Mont.	Montana
+NC	0.201	0.799	37	15	N.C.	North Carolina
+ND	0.000	1.000	38	3	N.D.	North Dakota
+NE	0.000	1.000	31	5	Neb.	Nebraska
+NH	0.778	0.222	33	4	N.H.	New Hampshire
+NJ	0.998	0.002	34	14	N.J.	New Jersey
+NM	0.987	0.013	35	5	N.M.	New Mexico
+NV	0.877	0.123	32	6	Nev.	Nevada
+NY	1.000	0.000	36	29	N.Y.	New York
+OH	0.805	0.195	39	18	Ohio	Ohio
+OK	0.000	1.000	40	7	Okla.	Oklahoma
+OR	0.982	0.018	41	7	Ore.	Oregon
+PA	0.962	0.038	42	20	Pa.	Pennsylvania
+RI	1.000	0.000	44	4	R.I.	Rhode Island
+SC	0.005	0.995	45	9	S.C.	South Carolina
+SD	0.001	0.999	46	3	S.D.	South Dakota
+TN	0.000	1.000	47	11	Tenn.	Tennessee
+TX	0.000	1.000	48	38	Tex.	Texas
+UT	0.000	1.000	49	6	Utah	Utah
+VA	0.664	0.336	51	13	Va.	Virginia
+VT	1.000	0.000	50	3	Vt.	Vermont
+WA	0.999	0.001	53	12	Wash.	Washington
+WI	0.912	0.088	55	10	Wis.	Wisconsin
+WV	0.001	0.999	54	5	W.Va.	West Virginia
+WY	0.000	1.000	56	3	Wyo.	Wyoming

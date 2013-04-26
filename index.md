@@ -3,7 +3,7 @@ title: rCharts Version of Famous NYTimes 512 Paths
 subtitle: Interactive JS Charts from R
 author: Timely Portfolio
 github: {user: timelyportoflio, repo: rCharts_512Paths, branch: "gh-pages"}
-framework: minimal
+framework: bootstrap
 mode: selfcontained
 widgets: [512paths]
 highlighter: highlight.js
@@ -27,620 +27,619 @@ data <- read.delim(file = "data/states.tsv")
 p1 <- rCharts$new()
 p1$field("lib", "512paths")
 p1$set(data = toJSONArray(data))
+p1
 p1$print("g-chart")
 ```
 
-```
-## <div id='g-chart' class='rChart nvd3Plot 512paths'></div>
-## <div class="g-controls"></div>
-## <div class="g-chart">
-## </div>
-## <div class="g-scenario-group">
-##   <div class="g-scenario g-scenario-1">
-##     <h3>Florida is a Must Win for Romney</h3>
-##     <p>If Mr. Romney loses Florida, he has only one way to victory: through all the other battleground 
-## 
-## states. He has led most polls there, however, and is the favorite. If Mr. Romney wins Florida, he has 75 
-## 
-## paths open to him.</p>
-##     <button class="g-button" data-view="FL=dem">View Obama wins Florida</button>
-##   </div>
-##   <div class="g-scenario g-scenario-2">
-##     <h3>Ohio: Obama's Firewall</h3>
-##     <p>Of the three largest battleground states, Mr. Obama has the largest lead in Ohio – partly because of 
-## 
-## a strong local economy and the auto industry bailout. If he loses here, it's likely he will trail in Florida 
-## 
-## and North Carolina too. Losing all three leaves him with only 14 ways to win.</p>
-##     <button class="g-button" data-view="FL=rep&OH=rep&NC=rep">View Romney wins Ohio, Fla. & N.C.</button>
-##   </div>
-##   <div class="g-scenario g-scenario-3">
-##     <h3>Times's Battlegrounds</h3>
-##     <p>Nine states are shown above, but The Times rates only seven of them as battlegrounds. If Nevada goes 
-## 
-## to Mr. Obama and North Carolina goes to Mr. Romney, as The Times’s ratings suggest, the president will have 
-## 
-## four times as many paths to victory as his opponent.</p>
-##     <button class="g-button" data-view="NC=rep&NV=dem">View Battleground States</button>
-##   </div>
-##   <div class="g-scenario g-scenario-4">
-##     <h3>Edge of Your Seat Possibilities</h3>
-##     <p>There are five paths to a tie. In this case, the newly elected House of Representatives would select 
-## 
-## the president (likely Mr. Romney) and the Senate would select the vice president (possibly Joseph R. Biden 
-## 
-## Jr.).</p>
-##   </div>
-## </div>
-## <!--[if gt IE 8]><!-->
-## <script src="http://d3js.org/d3.v3.js"></script>
-## <script>
-## 
-## (function() {
-## 
-## //get parameters from rCharts
-## var params = {
-##  "dom": "g-chart",
-## "width":    800,
-## "height":    400,
-## "data": "[\n {\n \"code\": \"AK\",\n\"dem\":  0.001,\n\"rep\":  0.999,\n\"fips\": 2,\n\"votes\": 3,\n\"abbreviation\": \"Alaska\",\n\"name\": \"Alaska\" \n},\n{\n \"code\": \"AL\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 1,\n\"votes\": 9,\n\"abbreviation\": \"Ala.\",\n\"name\": \"Alabama\" \n},\n{\n \"code\": \"AR\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 5,\n\"votes\": 6,\n\"abbreviation\": \"Ark.\",\n\"name\": \"Arkansas\" \n},\n{\n \"code\": \"AZ\",\n\"dem\":  0.033,\n\"rep\":  0.967,\n\"fips\": 4,\n\"votes\": 11,\n\"abbreviation\": \"Ariz.\",\n\"name\": \"Arizona\" \n},\n{\n \"code\": \"CA\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 6,\n\"votes\": 55,\n\"abbreviation\": \"Calif.\",\n\"name\": \"California\" \n},\n{\n \"code\": \"CO\",\n\"dem\":  0.646,\n\"rep\":  0.354,\n\"fips\": 8,\n\"votes\": 9,\n\"abbreviation\": \"Colo.\",\n\"name\": \"Colorado\" \n},\n{\n \"code\": \"CT\",\n\"dem\":  0.999,\n\"rep\":  0.001,\n\"fips\": 9,\n\"votes\": 7,\n\"abbreviation\": \"Conn.\",\n\"name\": \"Connecticut\" \n},\n{\n \"code\": \"DC\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 11,\n\"votes\": 3,\n\"abbreviation\": \"D.C.\",\n\"name\": \"District of Columbia\" \n},\n{\n \"code\": \"DE\",\n\"dem\":  0.999,\n\"rep\":  0.001,\n\"fips\": 10,\n\"votes\": 3,\n\"abbreviation\": \"Del.\",\n\"name\": \"Delaware\" \n},\n{\n \"code\": \"FL\",\n\"dem\":  0.449,\n\"rep\":  0.551,\n\"fips\": 12,\n\"votes\": 29,\n\"abbreviation\": \"Fla.\",\n\"name\": \"Florida\" \n},\n{\n \"code\": \"GA\",\n\"dem\":  0.003,\n\"rep\":  0.997,\n\"fips\": 13,\n\"votes\": 16,\n\"abbreviation\": \"Ga.\",\n\"name\": \"Georgia\" \n},\n{\n \"code\": \"HI\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 15,\n\"votes\": 4,\n\"abbreviation\": \"Hawaii\",\n\"name\": \"Hawaii\" \n},\n{\n \"code\": \"IA\",\n\"dem\":  0.788,\n\"rep\":  0.212,\n\"fips\": 19,\n\"votes\": 6,\n\"abbreviation\": \"Iowa\",\n\"name\": \"Iowa\" \n},\n{\n \"code\": \"ID\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 16,\n\"votes\": 4,\n\"abbreviation\": \"Idaho\",\n\"name\": \"Idaho\" \n},\n{\n \"code\": \"IL\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 17,\n\"votes\": 20,\n\"abbreviation\": \"Ill.\",\n\"name\": \"Illinois\" \n},\n{\n \"code\": \"IN\",\n\"dem\":  0.001,\n\"rep\":  0.999,\n\"fips\": 18,\n\"votes\": 11,\n\"abbreviation\": \"Ind.\",\n\"name\": \"Indiana\" \n},\n{\n \"code\": \"KS\",\n\"dem\":  0.001,\n\"rep\":  0.999,\n\"fips\": 20,\n\"votes\": 6,\n\"abbreviation\": \"Kan.\",\n\"name\": \"Kansas\" \n},\n{\n \"code\": \"KY\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 21,\n\"votes\": 8,\n\"abbreviation\": \"Ky.\",\n\"name\": \"Kentucky\" \n},\n{\n \"code\": \"LA\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 22,\n\"votes\": 8,\n\"abbreviation\": \"La.\",\n\"name\": \"Louisiana\" \n},\n{\n \"code\": \"MA\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 25,\n\"votes\": 11,\n\"abbreviation\": \"Mass.\",\n\"name\": \"Massachusetts\" \n},\n{\n \"code\": \"MD\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 24,\n\"votes\": 10,\n\"abbreviation\": \"Md.\",\n\"name\": \"Maryland\" \n},\n{\n \"code\": \"ME\",\n\"dem\":  0.998,\n\"rep\":  0.002,\n\"fips\": 23,\n\"votes\": 4,\n\"abbreviation\": \"Me.\",\n\"name\": \"Maine\" \n},\n{\n \"code\": \"MI\",\n\"dem\":  0.986,\n\"rep\":  0.014,\n\"fips\": 26,\n\"votes\": 16,\n\"abbreviation\": \"Mich.\",\n\"name\": \"Michigan\" \n},\n{\n \"code\": \"MN\",\n\"dem\":  0.985,\n\"rep\":  0.015,\n\"fips\": 27,\n\"votes\": 10,\n\"abbreviation\": \"Minn.\",\n\"name\": \"Minnesota\" \n},\n{\n \"code\": \"MO\",\n\"dem\":  0.005,\n\"rep\":  0.995,\n\"fips\": 29,\n\"votes\": 10,\n\"abbreviation\": \"Mo.\",\n\"name\": \"Missouri\" \n},\n{\n \"code\": \"MS\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 28,\n\"votes\": 6,\n\"abbreviation\": \"Miss.\",\n\"name\": \"Mississippi\" \n},\n{\n \"code\": \"MT\",\n\"dem\":  0.019,\n\"rep\":  0.981,\n\"fips\": 30,\n\"votes\": 3,\n\"abbreviation\": \"Mont.\",\n\"name\": \"Montana\" \n},\n{\n \"code\": \"NC\",\n\"dem\":  0.201,\n\"rep\":  0.799,\n\"fips\": 37,\n\"votes\": 15,\n\"abbreviation\": \"N.C.\",\n\"name\": \"North Carolina\" \n},\n{\n \"code\": \"ND\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 38,\n\"votes\": 3,\n\"abbreviation\": \"N.D.\",\n\"name\": \"North Dakota\" \n},\n{\n \"code\": \"NE\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 31,\n\"votes\": 5,\n\"abbreviation\": \"Neb.\",\n\"name\": \"Nebraska\" \n},\n{\n \"code\": \"NH\",\n\"dem\":  0.778,\n\"rep\":  0.222,\n\"fips\": 33,\n\"votes\": 4,\n\"abbreviation\": \"N.H.\",\n\"name\": \"New Hampshire\" \n},\n{\n \"code\": \"NJ\",\n\"dem\":  0.998,\n\"rep\":  0.002,\n\"fips\": 34,\n\"votes\": 14,\n\"abbreviation\": \"N.J.\",\n\"name\": \"New Jersey\" \n},\n{\n \"code\": \"NM\",\n\"dem\":  0.987,\n\"rep\":  0.013,\n\"fips\": 35,\n\"votes\": 5,\n\"abbreviation\": \"N.M.\",\n\"name\": \"New Mexico\" \n},\n{\n \"code\": \"NV\",\n\"dem\":  0.877,\n\"rep\":  0.123,\n\"fips\": 32,\n\"votes\": 6,\n\"abbreviation\": \"Nev.\",\n\"name\": \"Nevada\" \n},\n{\n \"code\": \"NY\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 36,\n\"votes\": 29,\n\"abbreviation\": \"N.Y.\",\n\"name\": \"New York\" \n},\n{\n \"code\": \"OH\",\n\"dem\":  0.805,\n\"rep\":  0.195,\n\"fips\": 39,\n\"votes\": 18,\n\"abbreviation\": \"Ohio\",\n\"name\": \"Ohio\" \n},\n{\n \"code\": \"OK\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 40,\n\"votes\": 7,\n\"abbreviation\": \"Okla.\",\n\"name\": \"Oklahoma\" \n},\n{\n \"code\": \"OR\",\n\"dem\":  0.982,\n\"rep\":  0.018,\n\"fips\": 41,\n\"votes\": 7,\n\"abbreviation\": \"Ore.\",\n\"name\": \"Oregon\" \n},\n{\n \"code\": \"PA\",\n\"dem\":  0.962,\n\"rep\":  0.038,\n\"fips\": 42,\n\"votes\": 20,\n\"abbreviation\": \"Pa.\",\n\"name\": \"Pennsylvania\" \n},\n{\n \"code\": \"RI\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 44,\n\"votes\": 4,\n\"abbreviation\": \"R.I.\",\n\"name\": \"Rhode Island\" \n},\n{\n \"code\": \"SC\",\n\"dem\":  0.005,\n\"rep\":  0.995,\n\"fips\": 45,\n\"votes\": 9,\n\"abbreviation\": \"S.C.\",\n\"name\": \"South Carolina\" \n},\n{\n \"code\": \"SD\",\n\"dem\":  0.001,\n\"rep\":  0.999,\n\"fips\": 46,\n\"votes\": 3,\n\"abbreviation\": \"S.D.\",\n\"name\": \"South Dakota\" \n},\n{\n \"code\": \"TN\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 47,\n\"votes\": 11,\n\"abbreviation\": \"Tenn.\",\n\"name\": \"Tennessee\" \n},\n{\n \"code\": \"TX\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 48,\n\"votes\": 38,\n\"abbreviation\": \"Tex.\",\n\"name\": \"Texas\" \n},\n{\n \"code\": \"UT\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 49,\n\"votes\": 6,\n\"abbreviation\": \"Utah\",\n\"name\": \"Utah\" \n},\n{\n \"code\": \"VA\",\n\"dem\":  0.664,\n\"rep\":  0.336,\n\"fips\": 51,\n\"votes\": 13,\n\"abbreviation\": \"Va.\",\n\"name\": \"Virginia\" \n},\n{\n \"code\": \"VT\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 50,\n\"votes\": 3,\n\"abbreviation\": \"Vt.\",\n\"name\": \"Vermont\" \n},\n{\n \"code\": \"WA\",\n\"dem\":  0.999,\n\"rep\":  0.001,\n\"fips\": 53,\n\"votes\": 12,\n\"abbreviation\": \"Wash.\",\n\"name\": \"Washington\" \n},\n{\n \"code\": \"WI\",\n\"dem\":  0.912,\n\"rep\":  0.088,\n\"fips\": 55,\n\"votes\": 10,\n\"abbreviation\": \"Wis.\",\n\"name\": \"Wisconsin\" \n},\n{\n \"code\": \"WV\",\n\"dem\":  0.001,\n\"rep\":  0.999,\n\"fips\": 54,\n\"votes\": 5,\n\"abbreviation\": \"W.Va.\",\n\"name\": \"West Virginia\" \n},\n{\n \"code\": \"WY\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 56,\n\"votes\": 3,\n\"abbreviation\": \"Wyo.\",\n\"name\": \"Wyoming\" \n} \n]",
-## "id": "g-chart" 
-## }
-##     
-## var margin = {top: 85, right: 10, bottom: 40, left: 60},
-##     width = 970 - margin.left - margin.right,
-##     height = 650 - margin.top - margin.bottom;
-## 
-## var numbers = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"],
-##     formatCandidate = {dem: "Obama", rep: "Romney"},
-##     formatNumber = function(d) { return numbers[d] || d; },
-##     formatPercent = d3.format(".2p");
-## 
-## var y = d3.scale.pow()
-##     .exponent(2 / 3)
-##     .domain([0, 9])
-##     .rangeRound([0, height]);
-## 
-## var w = d3.scale.linear()
-##     .domain([0, 1])
-##     .range([1, 32]);
-## 
-## var svg = d3.select(".g-chart").append("svg")
-##     .attr("width", width + margin.left + margin.right)
-##     .attr("height", height + margin.top + margin.bottom)
-##   .append("g")
-##     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-## 
-## // Per-type markers, as they don't inherit styles.
-## svg.append("defs").selectAll("marker")
-##     .data(["dem", "rep", "dem-active", "rep-active"])
-##   .enter().append("marker")
-##     .attr("id", function(d) { return "g-arrowhead-" + d; })
-##     .attr("viewBox", "-.1 -5 10 10")
-##     .attr("orient", "auto")
-##   .append("path")
-##     .attr("d", "M-.1,-4L3.9,0L-.1,4")
-##     .attr("class", function(d) { return "g-marker g-" + d; });
-## 
-## //change here to allow R to pass in data rather than the original 
-## //d3.tsv("states.tsv", function(error, states) {
-## states = JSON.parse( params.data );
-##     
-##   var category = d3.scale.threshold()
-##       .domain([.6, .75, .92]) // .9
-##       .range(["tossup", "lean", "likely", "safe"]);
-## 
-##   var root = {
-##     demvotes: 0,
-##     repvotes: 0,
-##     probability: 1,
-##     party: null,
-##     state: {}
-##   };
-## 
-##   states.forEach(function(d) {
-##     d.dem = +d.dem;
-##     d.rep = +d.rep;
-##     d.votes = +d.votes;
-##     d.category = category(Math.max(d.dem, d.rep));
-##     if (d.category === "safe") {
-##       if (d.dem > d.rep) root.demvotes += d.votes;
-##       else root.repvotes += d.votes;
-##     }
-##   });
-## 
-##   states = states
-##       .filter(function(d) { return d.category !== "safe"; })
-##       .sort(function(a, b) { return b.votes - a.votes || a.name.localeCompare(b.name); })
-##       .map(function(d, i) { d.index = i; return d; });
-## 
-##   var tree = d3.layout.tree()
-##       .size([width, states.length])
-##       .separation(function(a, b) { return (a.probability + b.probability + .1) * (states.length - a.depth + 1); })
-##       .children(function(d, i) {
-##         if (i < states.length) {
-##           var s = states[i];
-##           return Math.max(d.demvotes, d.repvotes) < 270 && [
-##             {party: "dem", state: s, probability: d.probability / 2, demvotes: d.demvotes + s.votes, repvotes: d.repvotes},
-##             {party: "rep", state: s, probability: d.probability / 2, demvotes: d.demvotes, repvotes: d.repvotes + s.votes}
-##           ];
-##         }
-##       });
-## 
-##   var nodesByKey,
-##       oldNodesByKey,
-##       oldStates = states.slice(),
-##       bisect = d3.bisector(function(d) { return d.index; }).left,
-##       nodes = [],
-##       links = [],
-##       node = svg.selectAll(".g-node"),
-##       link = svg.selectAll(".g-link"),
-##       state = svg.selectAll(".g-state");
-## 
-##   var resetButton = d3.select(".g-controls").append("a")
-##       .attr("class", "g-reset")
-##       .text("Reset")
-##       .on("click", function() { reset(); transition(); });
-## 
-##   var control = d3.select(".g-controls").selectAll(".g-control")
-##       .data(states)
-##     .enter().append("div")
-##       .attr("class", "g-control");
-## 
-##   var controlButton = control.selectAll("button")
-##       .data(function(d) {
-##         return ["dem", "rep"].map(function(o) {
-##           return {state: d, outcome: o};
-##         });
-##       })
-##     .enter().append("button")
-##       .attr("class", function(d) { return "g-button g-" + d.outcome; })
-##       .text(function(d) { return d.outcome; })
-##       .on("click", function(view) { change(view); transition(); });
-## 
-##   control.append("span")
-##       .text(function(d) { return d.abbreviation; });
-## 
-##   var scoreboard = svg.append("g")
-##       .attr("class", "g-scoreboard")
-##       .attr("transform", "translate(" + ((width + margin.left + margin.right) / 2 - margin.left) + ",0)");
-## 
-##   var kicker = scoreboard.append("text")
-##       .attr("class", "g-kicker")
-##       .attr("y", -52);
-## 
-##   scoreboard.append("rect")
-##       .attr("x", -280)
-##       .attr("y", -80)
-##       .attr("width", 280 * 2)
-##       .attr("height", 80)
-## 
-##   scoreboard.append("path")
-##       .attr("d", "M-280,0H-20l20,20L20,0H280");
-## 
-##   var candidateScores = [
-##     {party: "dem", position: -280, align: "start"},
-##     {party: "rep", position: 280, align: "end"},
-##     {party: "tie", position: null, align: "middle"}
-##   ];
-## 
-##   scoreboard.selectAll(".g-prefix")
-##       .data(candidateScores)
-##     .enter().append("text")
-##       .attr("class", function(d) { return "g-" + d.party + " g-prefix"; })
-##       .attr("x", function(d) { return d.position; })
-##       .attr("y", "-1.2em")
-##       .style("text-anchor", function(d) { return d.align; })
-##       .text(function(d) { return d.party === "tie" ? "" : formatCandidate[d.party] + " has "; });
-## 
-##   scoreboard.selectAll(".g-prefix").append("tspan")
-##       .attr("class", "g-score");
-## 
-##   scoreboard.selectAll(".g-prefix").append("tspan")
-##       .attr("class", "g-suffix");
-## 
-##   scoreboard.append("text")
-##       .attr("class", "g-ratio g-dem")
-##       .attr("y", "-0.8em")
-##       .attr("x", -168);
-## 
-##   scoreboard.append("text")
-##       .attr("class", "g-ratio g-rep")
-##       .attr("y", "-0.8em")
-##       .attr("x", 170);
-## 
-##   scoreboard.append("text")
-##       .attr("class", "g-ratio g-tie")
-##       .attr("y", "-0.8em");
-## 
-##   var endAlert = svg.append("text")
-##       .attr("class", "g-alert")
-##       .attr("transform", "translate(" + ((width + margin.left + margin.right) / 2 - margin.left) + ",35)");
-## 
-##   endAlert.append("tspan")
-##       .attr("x", 0)
-##       .text("With these selections,");
-## 
-##   endAlert.append("tspan")
-##       .attr("class", "g-output")
-##       .attr("x", 0)
-##       .attr("y", "1.5em")
-##       .attr("class", "g-output");
-## 
-##   var scenarioButton = d3.selectAll(".g-scenario .g-button")
-##       .on("click", function() {
-##         var outcome = {};
-##         this.getAttribute("data-view").split("&").forEach(function(view) { outcome[view.substring(0, 2)] = view.substring(3); });
-##         controlButton.filter(function(d) {
-##           return d.state.enabledParty != outcome[d.state.code]
-##               && (!outcome[d.state.code] && d.state.enabledParty
-##                 ? d.outcome === d.state.enabledParty
-##                 : d.outcome === outcome[d.state.code]);
-##         }).each(change);
-##         transition();
-##       });
-## 
-##   update();
-## 
-##   function update() {
-##     root.children = null;
-##     nodes = tree.size([width, 1]).nodes(root);
-##     links = tree.links(nodes).reverse();
-##     root.x = (width + margin.right - margin.left) / 2;
-## 
-##     //
-##     nodesByKey = {};
-##     nodes.forEach(function(d) { nodesByKey[d.key = key(d)] = d; });
-## 
-##     updateStates();
-##     updateNodes();
-##     updateLinks();
-##     updateVoronoi();
-##     updateScoreboard();
-##   }
-## 
-##   function updateStates() {
-##     state = state.data(states, function(d) { return d.code; });
-## 
-##     d3.transition(state.exit())
-##         .style("fill-opacity", 1e-6)
-##         .attr("transform", function(d) { return "translate(" + (-margin.left + 10) + "," + y(bisect(states, d.index)) + ")"; })
-##         .remove();
-## 
-##     var stateEnter = state.enter().insert("g", ".g-scoreboard,.g-node,.g-link")
-##         .style("fill-opacity", 1e-6)
-##         .attr("class", "g-state")
-##         .attr("transform", function(d) { return "translate(" + (-margin.left + 10) + "," + y(bisect(oldStates, d.index)) + ")"; });
-## 
-##     d3.transition(state)
-##         .style("fill-opacity", 1)
-##         .attr("transform", function(d, i) { return "translate(" + (-margin.left + 10) + "," + y(i + 1) + ")"; });
-## 
-##     stateEnter.append("line")
-##         .attr("x2", width + margin.left - 10);
-## 
-##     stateEnter.append("rect")
-##         .attr("y", -16)
-##         .attr("width", 12)
-##         .attr("height", 12);
-## 
-##     stateEnter.selectAll("text")
-##         .data(["dem", "rep"])
-##       .enter().append("text")
-##         .attr("class", function(d) { return "g-" + d; })
-##         .attr("y", -6)
-##         .attr("x", 6)
-##         .style("text-anchor", "middle")
-##         .text(function(d) { return d.substring(0, 1).toUpperCase(); });
-## 
-##     stateEnter.append("text")
-##         .attr("x", 16)
-##         .attr("y", -6)
-##         .text(function(d) { return d.name; });
-##   }
-## 
-##   function updateLinks() {
-##     link = link.data(links, function(d) { return d.target.key; });
-## 
-##     var linkEnter = link.enter().insert("path", ".g-node")
-##         .attr("d", function(d) { var p = findOldParent(d.target); return diagonal({source: p, target: p}); })
-##         .attr("class", function(d) { return "g-link g-" + d.target.party; })
-##         .attr("marker-end", function(d) { return "url(#g-arrowhead-" + d.target.party + ")"; });
-## 
-##     d3.transition(link.exit())
-##         .attr("d", function(d) { var p = findParent(d.target); return diagonal({source: p, target: p}); })
-##         .remove();
-## 
-##     d3.selectAll(".g-link")
-##         .sort(ascendingDepth);
-## 
-##     d3.transition(link)
-##         .attr("d", diagonal)
-##         .style("stroke-width", function(d) { return w(d.target.probability) + "px"; });
-##   }
-## 
-##   function updateNodes() {
-##     node = node.data(nodes.slice(1), function(d) { return d.key; })
-##         .each(function(d) { d.update = true; });
-## 
-##     var nodeExit = d3.transition(node.exit())
-##         .attr("class", function(d) { return "g-node g-" + d.party; })
-##         .attr("transform", function(d) { var p = findParent(d); return "translate(" + p.x + "," + y(p.depth) + ")"; })
-##         .remove();
-## 
-##     var nodeEnter = node.enter().insert("g", ".g-scoreboard")
-##         .attr("class", function(d) { return "g-node g-" + d.party; })
-##         .attr("transform", function(d) { var p = findOldParent(d); return "translate(" + p.x + "," + y(p.depth) + ")"; });
-## 
-##     d3.transition(node)
-##         .attr("class", function(d) { return "g-node g-" + d.party + (d.depth === 1 ? " g-first" : ""); })
-##         .attr("transform", function(d) { return "translate(" + d.x + "," + y(d.depth) + ")"; });
-## 
-##     updateLabels(nodeEnter, nodeExit);
-##     updateLeaves(nodeEnter, nodeExit);
-##   }
-## 
-##   function updateLabels(nodeEnter, nodeExit) {
-##     var textEnter = nodeEnter.append("text").classed("g-label", true).attr("y", -6);
-##     textEnter.append("tspan").attr("class", "g-label-line1");
-##     textEnter.append("tspan").attr("class", "g-label-line2").attr("x", 0).attr("dy", ".71em");
-## 
-##     node.select(".g-label-line1")
-##         .attr("y", function(d) { return d.children ? null : -radius(d.depth) - 3; })
-##         .text(function(d) {
-##           var firstOfParty = true, p = d.parent;
-## 
-##           while (p && p.parent && firstOfParty) {
-##             if (p.party === d.party) firstOfParty = false;
-##             p = p.parent;
-##           }
-## 
-##           return firstOfParty ? "If " + formatCandidate[d.party] + " wins " + d.state.name + "\u2026"
-##               : d.children ? " " + d.state.abbreviation + ","
-##               : " and " + d.state.abbreviation + ",";
-##         });
-## 
-##     node.select(".g-label-line2")
-##         .attr("y", function(d) { return radius(d.depth) + 3; })
-##         .text(function(d) {
-##           return d.children ? null : (d.demvotes === d.repvotes ? " the candidates tie." : formatCandidate[d.party] + " wins.");
-##         });
-##   }
-## 
-##   function updateLeaves(nodeEnter, nodeExit) {
-##     var leaf = node.selectAll(".g-leaf")
-##         .data(function(d) { return d.children ? [] : [d]; });
-## 
-##     var leafEnter = leaf.enter().insert("g", "text")
-##         .attr("class", function(d) { return "g-leaf" + (d.demvotes === d.repvotes ? " g-tie" : ""); })
-##         .attr("transform", "scale(0)");
-## 
-##     leafEnter.append("circle")
-##         .attr("r", 50);
-## 
-##     leafEnter.append("path")
-##         .attr("class", "g-check")
-##         .attr("transform", "translate(-8,16)")
-##         .attr("d", "M-20,-20L0,0L38,-38");
-## 
-##     d3.transition(leaf.exit())
-##         .attr("transform", "scale(0)")
-##         .remove();
-## 
-##     nodeExit.select(".g-leaf")
-##         .attr("transform", "scale(0)");
-## 
-##     d3.transition(leaf)
-##         .attr("transform", function(d) { return "scale(" + radius(d.depth) + ")scale(.02)"; });
-##   }
-## 
-##   function updateVoronoi() {
-##     svg.select(".g-voronoi").remove();
-## 
-##     svg.append("g")
-##         .attr("class", "g-voronoi")
-##         .call(voronoi, nodes);
-##   }
-## 
-##   function updateScoreboard() {
-##     var demPaths = 0,
-##         repPaths = 0,
-##         tiePaths = 0;
-## 
-##     nodes.forEach(function(d) {
-##       if (!d.children) {
-##         var n = Math.pow(2, states.length - d.depth);
-##         if (d.demvotes > d.repvotes) demPaths += n;
-##         else if (d.repvotes > d.demvotes) repPaths += n;
-##         else tiePaths += n;
-##       }
-##     });
-## 
-##     //
-##     kicker.text("With " + formatNumber(states.length) + " state" + (states.length > 1 ? "s" : "") + " undecided:");
-##     scoreboard.select(".g-prefix.g-dem .g-score").text(demPaths);
-##     scoreboard.select(".g-prefix.g-dem .g-suffix").text(" way" + ((demPaths === 1) ? "" : "s") + " to win");
-##     scoreboard.select(".g-prefix.g-rep .g-score").text(repPaths);
-##     scoreboard.select(".g-prefix.g-rep .g-suffix").text(" way" + ((repPaths === 1) ? "" : "s") + " to win");
-##     scoreboard.select(".g-prefix.g-tie .g-score").text(tiePaths);
-##     scoreboard.select(".g-prefix.g-tie .g-suffix").text(" tie" + ((tiePaths === 1) ? "" : "s"));
-## 
-##     //
-##     var totalPaths = 1 << states.length;
-##     scoreboard.select(".g-dem.g-ratio").text(formatPercent(demPaths / totalPaths) + " of paths");
-##     scoreboard.select(".g-rep.g-ratio").text(formatPercent(repPaths / totalPaths) + " of paths");
-##     scoreboard.select(".g-tie.g-ratio").text(formatPercent(tiePaths / totalPaths) + " of paths");
-## 
-##     if (nodes.length === 1) {
-##       endAlert.select(".g-output").text((root.demvotes > root.repvotes ? "Obama wins" : root.demvotes < root.repvotes ? "Romney wins" : "the candidates tie") + " in all scenarios.");
-##       endAlert.transition().style("opacity", 1);
-##       if (root.demvotes > root.repvotes) {
-##         d3.select(".g-heads .g-dem").style("opacity", 1).style("left", "-100px");
-##         d3.select(".g-heads .g-rep").style("opacity", 0).style("left", "-100px");
-##       } else if (root.demvotes < root.repvotes) {
-##         d3.select(".g-heads .g-rep").style("opacity", 1).style("left", "-100px");
-##         d3.select(".g-heads .g-dem").style("opacity", 0).style("left", "-100px");
-##       } else {
-##         d3.select(".g-heads .g-dem").style("opacity", 1).style("left", "-220px");
-##         d3.select(".g-heads .g-rep").style("opacity", 1).style("left", "20px");
-##       }
-##     } else {
-##       endAlert.transition().style("opacity", 0);
-##       d3.select(".g-heads .g-dem").style("opacity", 0);
-##       d3.select(".g-heads .g-rep").style("opacity", 0);
-##     }
-##   }
-## 
-##   function reset() {
-##     controlButton.filter(function(d) { return d.outcome === d.state.enabledParty; }).each(change);
-##   }
-## 
-##   function change(view) {
-##     var key = view.state.code + "=" + view.outcome;
-## 
-##     if (view.state.enabledParty) {
-##       root[view.state.enabledParty + "votes"] -= view.state.votes;
-##       states.splice(bisect(states, view.state.index), 0, view.state);
-##     }
-## 
-##     var i = bisect(oldStates, view.state.index) + 1;
-## 
-##     if (view.outcome === view.state.enabledParty) {
-##       view.state.enabledParty = null;
-## 
-##       // Add the exiting state to nodes below.
-##       nodes.forEach(function(d) {
-##         if (d.depth >= i) d.key = d.key.split("&").concat(key).sort().join("&");
-##       });
-##     } else {
-##       if ((root[view.outcome + "votes"] += view.state.votes) >= 270) root.party = view.outcome;
-##       view.state.enabledParty = view.outcome;
-##       states.splice(states.indexOf(view.state), 1);
-## 
-##       // Remove the entering state from nodes below.
-##       var k = new RegExp("&" + key + "|" + key + "&");
-##       nodes.forEach(function(d) {
-##         if (d.depth > i) d.key = d.key.replace(k, "");
-##       });
-##     }
-##   }
-## 
-##   function transition() {
-##     controlButton.classed("g-active", function(d) { return d.state.enabledParty === d.outcome; });
-##     resetButton.style("display", states.length < y.domain()[1] ? "block" : "none");
-## 
-##     // Old node positions indexed by new key are needed for enter transitions.
-##     oldNodesByKey = {};
-##     nodes.forEach(function(d) { oldNodesByKey[d.key] = d; });
-## 
-##     d3.transition().duration(d3.event.altKey ? 7500 : 750).each(update);
-## 
-##     // The previous states are needed when multiple changes are made pre-transition.
-##     oldStates = states.slice();
-##   }
-## 
-##   function click(d) {
-##     mouseout(d);
-##     var p = d.parent;
-##     while (p) {
-##       if (p.parent === root) { d = p; break; }
-##       p = p.parent;
-##     }
-##     if (d !== root) {
-##       change({state: d.state, outcome: d.party});
-##       transition();
-##     }
-##   }
-## 
-##   function mouseover(d) {
-##     activate(d, true);
-##     svg.attr("class", "g-" + d.party);
-##     node.filter(function(d) { return d.active; }).classed("g-active", true);
-##     link.filter(function(d) { return d.target.active; }).classed("g-active", true).attr("marker-end", 
-## 
-## function(d) { return "url(#g-arrowhead-" + d.target.party + "-active)"; });
-##     state.attr("class", function(d) { return "g-state" + (d.activeParty ? " g-" + d.activeParty : ""); });
-##   }
-## 
-##   function mouseout(d) {
-##     node.filter(function(d) { return d.active; }).classed("g-active", false);
-##     link.filter(function(d) { return d.target.active; }).classed("g-active", false).attr("marker-end", function(d) { return "url(#g-arrowhead-" + d.target.party + ")"; });
-##     state.attr("class", "g-state");
-##     activate(d, false);
-##   }
-## 
-##   function activate(d, active) {
-##     d.active = active;
-##     d.state.activeParty = active ? d.party : null;
-##     d.parent && activate(d.parent, active);
-##   }
-## 
-##   function voronoi(g, nodes) {
-##     nodes = nodes.filter(function(d) { return !d.children; });
-## 
-##     var x0 = -margin.left, y0 = 0,
-##         x1 = width + margin.right, y1 = height + margin.left,
-##         xy = d3.geom.polygon([[x0, y0], [x0, y1], [x1, y1], [x1, y0]]);
-## 
-##     var path = g.selectAll("path")
-##         .data(d3.geom.voronoi(nodes.map(function(d) { return [d.x, y(d.depth)]; })));
-## 
-##     path.enter().append("path")
-##         .on("mouseover", mouseover)
-##         .on("mouseout", mouseout)
-##         .on("mousedown", function() { d3.event.preventDefault(); })
-##         .on("dblclick", click);
-## 
-##     path.attr("d", function(d) { return "M" + xy.clip(d).join("L") + "Z"; })
-##         .datum(function(d, i) { return nodes[i]; });
-## 
-##     path.exit().remove();
-##   }
-## 
-##   function key(d) {
-##     if (!d.parent) return "_root";
-##     var k = [], p = d;
-##     while (p && p.party) k.push(p.state.code + "=" + p.party), p = p.parent;
-##     return k.sort().join("&");
-##   }
-## 
-##   function findParent(d) {
-##     var p = d.parent;
-##     while (p) {
-##       if ((d = nodesByKey[p.key]) && d.update) return d;
-##       p = p.parent;
-##     }
-##     return root;
-##   }
-## 
-##   function findOldParent(d) {
-##     var p = findParent(d);
-##     return oldNodesByKey ? oldNodesByKey[p.key] : p;
-##   }
-## //comment this out from d3.tsv above since data provided by R
-## //});
-## 
-## function ascendingDepth(b, a) {
-##   return a.target.depth - b.target.depth;
-## }
-## 
-## function radius(depth) {
-##   return Math.pow(2, 5.8 - depth / 2);
-## }
-## 
-## function diagonal(d) {
-##   var x0 = d.source.x, y0 = y(d.source.depth),
-##       x1 = d.target.x, y1 = y(d.target.depth);
-##   if (x0 < x1) x0 += w(d.target.probability) / 2;
-##   else if (x0 > x1) x0 -= w(d.target.probability) / 2;
-##   return "M" + x0 + "," + y0
-##       + "C" + x0 + "," + (y0 + y1) / 2
-##       + "," + x1 + "," + (y0 + y1) / 2
-##       + "," + x1 + "," + y1;
-## }
-## 
-## })();
-## 
-## </script>
-```
+<div id='g-chart' class='rChart nvd3Plot 512paths'></div>
+﻿<div class="g-controls"></div>
+<div class="g-chart">
+</div>
+<div class="g-scenario-group">
+  <div class="g-scenario g-scenario-1">
+    <h3>Florida is a Must Win for Romney</h3>
+    <p>If Mr. Romney loses Florida, he has only one way to victory: through all the other battleground 
+
+states. He has led most polls there, however, and is the favorite. If Mr. Romney wins Florida, he has 75 
+
+paths open to him.</p>
+    <button class="g-button" data-view="FL=dem">View Obama wins Florida</button>
+  </div>
+  <div class="g-scenario g-scenario-2">
+    <h3>Ohio: Obama's Firewall</h3>
+    <p>Of the three largest battleground states, Mr. Obama has the largest lead in Ohio – partly because of 
+
+a strong local economy and the auto industry bailout. If he loses here, it's likely he will trail in Florida 
+
+and North Carolina too. Losing all three leaves him with only 14 ways to win.</p>
+    <button class="g-button" data-view="FL=rep&OH=rep&NC=rep">View Romney wins Ohio, Fla. & N.C.</button>
+  </div>
+  <div class="g-scenario g-scenario-3">
+    <h3>Times's Battlegrounds</h3>
+    <p>Nine states are shown above, but The Times rates only seven of them as battlegrounds. If Nevada goes 
+
+to Mr. Obama and North Carolina goes to Mr. Romney, as The Times’s ratings suggest, the president will have 
+
+four times as many paths to victory as his opponent.</p>
+    <button class="g-button" data-view="NC=rep&NV=dem">View Battleground States</button>
+  </div>
+  <div class="g-scenario g-scenario-4">
+    <h3>Edge of Your Seat Possibilities</h3>
+    <p>There are five paths to a tie. In this case, the newly elected House of Representatives would select 
+
+the president (likely Mr. Romney) and the Senate would select the vice president (possibly Joseph R. Biden 
+
+Jr.).</p>
+  </div>
+</div>
+
+
+<script>
+
+(function() {
+
+//get parameters from rCharts
+var params = {
+ "dom": "g-chart",
+"width":    800,
+"height":    400,
+"data": "[\n {\n \"code\": \"AK\",\n\"dem\":  0.001,\n\"rep\":  0.999,\n\"fips\": 2,\n\"votes\": 3,\n\"abbreviation\": \"Alaska\",\n\"name\": \"Alaska\" \n},\n{\n \"code\": \"AL\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 1,\n\"votes\": 9,\n\"abbreviation\": \"Ala.\",\n\"name\": \"Alabama\" \n},\n{\n \"code\": \"AR\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 5,\n\"votes\": 6,\n\"abbreviation\": \"Ark.\",\n\"name\": \"Arkansas\" \n},\n{\n \"code\": \"AZ\",\n\"dem\":  0.033,\n\"rep\":  0.967,\n\"fips\": 4,\n\"votes\": 11,\n\"abbreviation\": \"Ariz.\",\n\"name\": \"Arizona\" \n},\n{\n \"code\": \"CA\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 6,\n\"votes\": 55,\n\"abbreviation\": \"Calif.\",\n\"name\": \"California\" \n},\n{\n \"code\": \"CO\",\n\"dem\":  0.646,\n\"rep\":  0.354,\n\"fips\": 8,\n\"votes\": 9,\n\"abbreviation\": \"Colo.\",\n\"name\": \"Colorado\" \n},\n{\n \"code\": \"CT\",\n\"dem\":  0.999,\n\"rep\":  0.001,\n\"fips\": 9,\n\"votes\": 7,\n\"abbreviation\": \"Conn.\",\n\"name\": \"Connecticut\" \n},\n{\n \"code\": \"DC\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 11,\n\"votes\": 3,\n\"abbreviation\": \"D.C.\",\n\"name\": \"District of Columbia\" \n},\n{\n \"code\": \"DE\",\n\"dem\":  0.999,\n\"rep\":  0.001,\n\"fips\": 10,\n\"votes\": 3,\n\"abbreviation\": \"Del.\",\n\"name\": \"Delaware\" \n},\n{\n \"code\": \"FL\",\n\"dem\":  0.449,\n\"rep\":  0.551,\n\"fips\": 12,\n\"votes\": 29,\n\"abbreviation\": \"Fla.\",\n\"name\": \"Florida\" \n},\n{\n \"code\": \"GA\",\n\"dem\":  0.003,\n\"rep\":  0.997,\n\"fips\": 13,\n\"votes\": 16,\n\"abbreviation\": \"Ga.\",\n\"name\": \"Georgia\" \n},\n{\n \"code\": \"HI\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 15,\n\"votes\": 4,\n\"abbreviation\": \"Hawaii\",\n\"name\": \"Hawaii\" \n},\n{\n \"code\": \"IA\",\n\"dem\":  0.788,\n\"rep\":  0.212,\n\"fips\": 19,\n\"votes\": 6,\n\"abbreviation\": \"Iowa\",\n\"name\": \"Iowa\" \n},\n{\n \"code\": \"ID\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 16,\n\"votes\": 4,\n\"abbreviation\": \"Idaho\",\n\"name\": \"Idaho\" \n},\n{\n \"code\": \"IL\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 17,\n\"votes\": 20,\n\"abbreviation\": \"Ill.\",\n\"name\": \"Illinois\" \n},\n{\n \"code\": \"IN\",\n\"dem\":  0.001,\n\"rep\":  0.999,\n\"fips\": 18,\n\"votes\": 11,\n\"abbreviation\": \"Ind.\",\n\"name\": \"Indiana\" \n},\n{\n \"code\": \"KS\",\n\"dem\":  0.001,\n\"rep\":  0.999,\n\"fips\": 20,\n\"votes\": 6,\n\"abbreviation\": \"Kan.\",\n\"name\": \"Kansas\" \n},\n{\n \"code\": \"KY\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 21,\n\"votes\": 8,\n\"abbreviation\": \"Ky.\",\n\"name\": \"Kentucky\" \n},\n{\n \"code\": \"LA\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 22,\n\"votes\": 8,\n\"abbreviation\": \"La.\",\n\"name\": \"Louisiana\" \n},\n{\n \"code\": \"MA\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 25,\n\"votes\": 11,\n\"abbreviation\": \"Mass.\",\n\"name\": \"Massachusetts\" \n},\n{\n \"code\": \"MD\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 24,\n\"votes\": 10,\n\"abbreviation\": \"Md.\",\n\"name\": \"Maryland\" \n},\n{\n \"code\": \"ME\",\n\"dem\":  0.998,\n\"rep\":  0.002,\n\"fips\": 23,\n\"votes\": 4,\n\"abbreviation\": \"Me.\",\n\"name\": \"Maine\" \n},\n{\n \"code\": \"MI\",\n\"dem\":  0.986,\n\"rep\":  0.014,\n\"fips\": 26,\n\"votes\": 16,\n\"abbreviation\": \"Mich.\",\n\"name\": \"Michigan\" \n},\n{\n \"code\": \"MN\",\n\"dem\":  0.985,\n\"rep\":  0.015,\n\"fips\": 27,\n\"votes\": 10,\n\"abbreviation\": \"Minn.\",\n\"name\": \"Minnesota\" \n},\n{\n \"code\": \"MO\",\n\"dem\":  0.005,\n\"rep\":  0.995,\n\"fips\": 29,\n\"votes\": 10,\n\"abbreviation\": \"Mo.\",\n\"name\": \"Missouri\" \n},\n{\n \"code\": \"MS\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 28,\n\"votes\": 6,\n\"abbreviation\": \"Miss.\",\n\"name\": \"Mississippi\" \n},\n{\n \"code\": \"MT\",\n\"dem\":  0.019,\n\"rep\":  0.981,\n\"fips\": 30,\n\"votes\": 3,\n\"abbreviation\": \"Mont.\",\n\"name\": \"Montana\" \n},\n{\n \"code\": \"NC\",\n\"dem\":  0.201,\n\"rep\":  0.799,\n\"fips\": 37,\n\"votes\": 15,\n\"abbreviation\": \"N.C.\",\n\"name\": \"North Carolina\" \n},\n{\n \"code\": \"ND\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 38,\n\"votes\": 3,\n\"abbreviation\": \"N.D.\",\n\"name\": \"North Dakota\" \n},\n{\n \"code\": \"NE\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 31,\n\"votes\": 5,\n\"abbreviation\": \"Neb.\",\n\"name\": \"Nebraska\" \n},\n{\n \"code\": \"NH\",\n\"dem\":  0.778,\n\"rep\":  0.222,\n\"fips\": 33,\n\"votes\": 4,\n\"abbreviation\": \"N.H.\",\n\"name\": \"New Hampshire\" \n},\n{\n \"code\": \"NJ\",\n\"dem\":  0.998,\n\"rep\":  0.002,\n\"fips\": 34,\n\"votes\": 14,\n\"abbreviation\": \"N.J.\",\n\"name\": \"New Jersey\" \n},\n{\n \"code\": \"NM\",\n\"dem\":  0.987,\n\"rep\":  0.013,\n\"fips\": 35,\n\"votes\": 5,\n\"abbreviation\": \"N.M.\",\n\"name\": \"New Mexico\" \n},\n{\n \"code\": \"NV\",\n\"dem\":  0.877,\n\"rep\":  0.123,\n\"fips\": 32,\n\"votes\": 6,\n\"abbreviation\": \"Nev.\",\n\"name\": \"Nevada\" \n},\n{\n \"code\": \"NY\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 36,\n\"votes\": 29,\n\"abbreviation\": \"N.Y.\",\n\"name\": \"New York\" \n},\n{\n \"code\": \"OH\",\n\"dem\":  0.805,\n\"rep\":  0.195,\n\"fips\": 39,\n\"votes\": 18,\n\"abbreviation\": \"Ohio\",\n\"name\": \"Ohio\" \n},\n{\n \"code\": \"OK\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 40,\n\"votes\": 7,\n\"abbreviation\": \"Okla.\",\n\"name\": \"Oklahoma\" \n},\n{\n \"code\": \"OR\",\n\"dem\":  0.982,\n\"rep\":  0.018,\n\"fips\": 41,\n\"votes\": 7,\n\"abbreviation\": \"Ore.\",\n\"name\": \"Oregon\" \n},\n{\n \"code\": \"PA\",\n\"dem\":  0.962,\n\"rep\":  0.038,\n\"fips\": 42,\n\"votes\": 20,\n\"abbreviation\": \"Pa.\",\n\"name\": \"Pennsylvania\" \n},\n{\n \"code\": \"RI\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 44,\n\"votes\": 4,\n\"abbreviation\": \"R.I.\",\n\"name\": \"Rhode Island\" \n},\n{\n \"code\": \"SC\",\n\"dem\":  0.005,\n\"rep\":  0.995,\n\"fips\": 45,\n\"votes\": 9,\n\"abbreviation\": \"S.C.\",\n\"name\": \"South Carolina\" \n},\n{\n \"code\": \"SD\",\n\"dem\":  0.001,\n\"rep\":  0.999,\n\"fips\": 46,\n\"votes\": 3,\n\"abbreviation\": \"S.D.\",\n\"name\": \"South Dakota\" \n},\n{\n \"code\": \"TN\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 47,\n\"votes\": 11,\n\"abbreviation\": \"Tenn.\",\n\"name\": \"Tennessee\" \n},\n{\n \"code\": \"TX\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 48,\n\"votes\": 38,\n\"abbreviation\": \"Tex.\",\n\"name\": \"Texas\" \n},\n{\n \"code\": \"UT\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 49,\n\"votes\": 6,\n\"abbreviation\": \"Utah\",\n\"name\": \"Utah\" \n},\n{\n \"code\": \"VA\",\n\"dem\":  0.664,\n\"rep\":  0.336,\n\"fips\": 51,\n\"votes\": 13,\n\"abbreviation\": \"Va.\",\n\"name\": \"Virginia\" \n},\n{\n \"code\": \"VT\",\n\"dem\":      1,\n\"rep\":      0,\n\"fips\": 50,\n\"votes\": 3,\n\"abbreviation\": \"Vt.\",\n\"name\": \"Vermont\" \n},\n{\n \"code\": \"WA\",\n\"dem\":  0.999,\n\"rep\":  0.001,\n\"fips\": 53,\n\"votes\": 12,\n\"abbreviation\": \"Wash.\",\n\"name\": \"Washington\" \n},\n{\n \"code\": \"WI\",\n\"dem\":  0.912,\n\"rep\":  0.088,\n\"fips\": 55,\n\"votes\": 10,\n\"abbreviation\": \"Wis.\",\n\"name\": \"Wisconsin\" \n},\n{\n \"code\": \"WV\",\n\"dem\":  0.001,\n\"rep\":  0.999,\n\"fips\": 54,\n\"votes\": 5,\n\"abbreviation\": \"W.Va.\",\n\"name\": \"West Virginia\" \n},\n{\n \"code\": \"WY\",\n\"dem\":      0,\n\"rep\":      1,\n\"fips\": 56,\n\"votes\": 3,\n\"abbreviation\": \"Wyo.\",\n\"name\": \"Wyoming\" \n} \n]",
+"id": "g-chart" 
+}
+    
+var margin = {top: 85, right: 10, bottom: 40, left: 60},
+    width = 970 - margin.left - margin.right,
+    height = 650 - margin.top - margin.bottom;
+
+var numbers = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"],
+    formatCandidate = {dem: "Obama", rep: "Romney"},
+    formatNumber = function(d) { return numbers[d] || d; },
+    formatPercent = d3.format(".2p");
+
+var y = d3.scale.pow()
+    .exponent(2 / 3)
+    .domain([0, 9])
+    .rangeRound([0, height]);
+
+var w = d3.scale.linear()
+    .domain([0, 1])
+    .range([1, 32]);
+
+var svg = d3.select(".g-chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// Per-type markers, as they don't inherit styles.
+svg.append("defs").selectAll("marker")
+    .data(["dem", "rep", "dem-active", "rep-active"])
+  .enter().append("marker")
+    .attr("id", function(d) { return "g-arrowhead-" + d; })
+    .attr("viewBox", "-.1 -5 10 10")
+    .attr("orient", "auto")
+  .append("path")
+    .attr("d", "M-.1,-4L3.9,0L-.1,4")
+    .attr("class", function(d) { return "g-marker g-" + d; });
+
+//change here to allow R to pass in data rather than the original 
+//d3.tsv("states.tsv", function(error, states) {
+states = JSON.parse( params.data );
+    
+  var category = d3.scale.threshold()
+      .domain([.6, .75, .92]) // .9
+      .range(["tossup", "lean", "likely", "safe"]);
+
+  var root = {
+    demvotes: 0,
+    repvotes: 0,
+    probability: 1,
+    party: null,
+    state: {}
+  };
+
+  states.forEach(function(d) {
+    d.dem = +d.dem;
+    d.rep = +d.rep;
+    d.votes = +d.votes;
+    d.category = category(Math.max(d.dem, d.rep));
+    if (d.category === "safe") {
+      if (d.dem > d.rep) root.demvotes += d.votes;
+      else root.repvotes += d.votes;
+    }
+  });
+
+  states = states
+      .filter(function(d) { return d.category !== "safe"; })
+      .sort(function(a, b) { return b.votes - a.votes || a.name.localeCompare(b.name); })
+      .map(function(d, i) { d.index = i; return d; });
+
+  var tree = d3.layout.tree()
+      .size([width, states.length])
+      .separation(function(a, b) { return (a.probability + b.probability + .1) * (states.length - a.depth + 1); })
+      .children(function(d, i) {
+        if (i < states.length) {
+          var s = states[i];
+          return Math.max(d.demvotes, d.repvotes) < 270 && [
+            {party: "dem", state: s, probability: d.probability / 2, demvotes: d.demvotes + s.votes, repvotes: d.repvotes},
+            {party: "rep", state: s, probability: d.probability / 2, demvotes: d.demvotes, repvotes: d.repvotes + s.votes}
+          ];
+        }
+      });
+
+  var nodesByKey,
+      oldNodesByKey,
+      oldStates = states.slice(),
+      bisect = d3.bisector(function(d) { return d.index; }).left,
+      nodes = [],
+      links = [],
+      node = svg.selectAll(".g-node"),
+      link = svg.selectAll(".g-link"),
+      state = svg.selectAll(".g-state");
+
+  var resetButton = d3.select(".g-controls").append("a")
+      .attr("class", "g-reset")
+      .text("Reset")
+      .on("click", function() { reset(); transition(); });
+
+  var control = d3.select(".g-controls").selectAll(".g-control")
+      .data(states)
+    .enter().append("div")
+      .attr("class", "g-control");
+
+  var controlButton = control.selectAll("button")
+      .data(function(d) {
+        return ["dem", "rep"].map(function(o) {
+          return {state: d, outcome: o};
+        });
+      })
+    .enter().append("button")
+      .attr("class", function(d) { return "g-button g-" + d.outcome; })
+      .text(function(d) { return d.outcome; })
+      .on("click", function(view) { change(view); transition(); });
+
+  control.append("span")
+      .text(function(d) { return d.abbreviation; });
+
+  var scoreboard = svg.append("g")
+      .attr("class", "g-scoreboard")
+      .attr("transform", "translate(" + ((width + margin.left + margin.right) / 2 - margin.left) + ",0)");
+
+  var kicker = scoreboard.append("text")
+      .attr("class", "g-kicker")
+      .attr("y", -52);
+
+  scoreboard.append("rect")
+      .attr("x", -280)
+      .attr("y", -80)
+      .attr("width", 280 * 2)
+      .attr("height", 80)
+
+  scoreboard.append("path")
+      .attr("d", "M-280,0H-20l20,20L20,0H280");
+
+  var candidateScores = [
+    {party: "dem", position: -280, align: "start"},
+    {party: "rep", position: 280, align: "end"},
+    {party: "tie", position: null, align: "middle"}
+  ];
+
+  scoreboard.selectAll(".g-prefix")
+      .data(candidateScores)
+    .enter().append("text")
+      .attr("class", function(d) { return "g-" + d.party + " g-prefix"; })
+      .attr("x", function(d) { return d.position; })
+      .attr("y", "-1.2em")
+      .style("text-anchor", function(d) { return d.align; })
+      .text(function(d) { return d.party === "tie" ? "" : formatCandidate[d.party] + " has "; });
+
+  scoreboard.selectAll(".g-prefix").append("tspan")
+      .attr("class", "g-score");
+
+  scoreboard.selectAll(".g-prefix").append("tspan")
+      .attr("class", "g-suffix");
+
+  scoreboard.append("text")
+      .attr("class", "g-ratio g-dem")
+      .attr("y", "-0.8em")
+      .attr("x", -168);
+
+  scoreboard.append("text")
+      .attr("class", "g-ratio g-rep")
+      .attr("y", "-0.8em")
+      .attr("x", 170);
+
+  scoreboard.append("text")
+      .attr("class", "g-ratio g-tie")
+      .attr("y", "-0.8em");
+
+  var endAlert = svg.append("text")
+      .attr("class", "g-alert")
+      .attr("transform", "translate(" + ((width + margin.left + margin.right) / 2 - margin.left) + ",35)");
+
+  endAlert.append("tspan")
+      .attr("x", 0)
+      .text("With these selections,");
+
+  endAlert.append("tspan")
+      .attr("class", "g-output")
+      .attr("x", 0)
+      .attr("y", "1.5em")
+      .attr("class", "g-output");
+
+  var scenarioButton = d3.selectAll(".g-scenario .g-button")
+      .on("click", function() {
+        var outcome = {};
+        this.getAttribute("data-view").split("&").forEach(function(view) { outcome[view.substring(0, 2)] = view.substring(3); });
+        controlButton.filter(function(d) {
+          return d.state.enabledParty != outcome[d.state.code]
+              && (!outcome[d.state.code] && d.state.enabledParty
+                ? d.outcome === d.state.enabledParty
+                : d.outcome === outcome[d.state.code]);
+        }).each(change);
+        transition();
+      });
+
+  update();
+
+  function update() {
+    root.children = null;
+    nodes = tree.size([width, 1]).nodes(root);
+    links = tree.links(nodes).reverse();
+    root.x = (width + margin.right - margin.left) / 2;
+
+    //
+    nodesByKey = {};
+    nodes.forEach(function(d) { nodesByKey[d.key = key(d)] = d; });
+
+    updateStates();
+    updateNodes();
+    updateLinks();
+    updateVoronoi();
+    updateScoreboard();
+  }
+
+  function updateStates() {
+    state = state.data(states, function(d) { return d.code; });
+
+    d3.transition(state.exit())
+        .style("fill-opacity", 1e-6)
+        .attr("transform", function(d) { return "translate(" + (-margin.left + 10) + "," + y(bisect(states, d.index)) + ")"; })
+        .remove();
+
+    var stateEnter = state.enter().insert("g", ".g-scoreboard,.g-node,.g-link")
+        .style("fill-opacity", 1e-6)
+        .attr("class", "g-state")
+        .attr("transform", function(d) { return "translate(" + (-margin.left + 10) + "," + y(bisect(oldStates, d.index)) + ")"; });
+
+    d3.transition(state)
+        .style("fill-opacity", 1)
+        .attr("transform", function(d, i) { return "translate(" + (-margin.left + 10) + "," + y(i + 1) + ")"; });
+
+    stateEnter.append("line")
+        .attr("x2", width + margin.left - 10);
+
+    stateEnter.append("rect")
+        .attr("y", -16)
+        .attr("width", 12)
+        .attr("height", 12);
+
+    stateEnter.selectAll("text")
+        .data(["dem", "rep"])
+      .enter().append("text")
+        .attr("class", function(d) { return "g-" + d; })
+        .attr("y", -6)
+        .attr("x", 6)
+        .style("text-anchor", "middle")
+        .text(function(d) { return d.substring(0, 1).toUpperCase(); });
+
+    stateEnter.append("text")
+        .attr("x", 16)
+        .attr("y", -6)
+        .text(function(d) { return d.name; });
+  }
+
+  function updateLinks() {
+    link = link.data(links, function(d) { return d.target.key; });
+
+    var linkEnter = link.enter().insert("path", ".g-node")
+        .attr("d", function(d) { var p = findOldParent(d.target); return diagonal({source: p, target: p}); })
+        .attr("class", function(d) { return "g-link g-" + d.target.party; })
+        .attr("marker-end", function(d) { return "url(#g-arrowhead-" + d.target.party + ")"; });
+
+    d3.transition(link.exit())
+        .attr("d", function(d) { var p = findParent(d.target); return diagonal({source: p, target: p}); })
+        .remove();
+
+    d3.selectAll(".g-link")
+        .sort(ascendingDepth);
+
+    d3.transition(link)
+        .attr("d", diagonal)
+        .style("stroke-width", function(d) { return w(d.target.probability) + "px"; });
+  }
+
+  function updateNodes() {
+    node = node.data(nodes.slice(1), function(d) { return d.key; })
+        .each(function(d) { d.update = true; });
+
+    var nodeExit = d3.transition(node.exit())
+        .attr("class", function(d) { return "g-node g-" + d.party; })
+        .attr("transform", function(d) { var p = findParent(d); return "translate(" + p.x + "," + y(p.depth) + ")"; })
+        .remove();
+
+    var nodeEnter = node.enter().insert("g", ".g-scoreboard")
+        .attr("class", function(d) { return "g-node g-" + d.party; })
+        .attr("transform", function(d) { var p = findOldParent(d); return "translate(" + p.x + "," + y(p.depth) + ")"; });
+
+    d3.transition(node)
+        .attr("class", function(d) { return "g-node g-" + d.party + (d.depth === 1 ? " g-first" : ""); })
+        .attr("transform", function(d) { return "translate(" + d.x + "," + y(d.depth) + ")"; });
+
+    updateLabels(nodeEnter, nodeExit);
+    updateLeaves(nodeEnter, nodeExit);
+  }
+
+  function updateLabels(nodeEnter, nodeExit) {
+    var textEnter = nodeEnter.append("text").classed("g-label", true).attr("y", -6);
+    textEnter.append("tspan").attr("class", "g-label-line1");
+    textEnter.append("tspan").attr("class", "g-label-line2").attr("x", 0).attr("dy", ".71em");
+
+    node.select(".g-label-line1")
+        .attr("y", function(d) { return d.children ? null : -radius(d.depth) - 3; })
+        .text(function(d) {
+          var firstOfParty = true, p = d.parent;
+
+          while (p && p.parent && firstOfParty) {
+            if (p.party === d.party) firstOfParty = false;
+            p = p.parent;
+          }
+
+          return firstOfParty ? "If " + formatCandidate[d.party] + " wins " + d.state.name + "\u2026"
+              : d.children ? " " + d.state.abbreviation + ","
+              : " and " + d.state.abbreviation + ",";
+        });
+
+    node.select(".g-label-line2")
+        .attr("y", function(d) { return radius(d.depth) + 3; })
+        .text(function(d) {
+          return d.children ? null : (d.demvotes === d.repvotes ? " the candidates tie." : formatCandidate[d.party] + " wins.");
+        });
+  }
+
+  function updateLeaves(nodeEnter, nodeExit) {
+    var leaf = node.selectAll(".g-leaf")
+        .data(function(d) { return d.children ? [] : [d]; });
+
+    var leafEnter = leaf.enter().insert("g", "text")
+        .attr("class", function(d) { return "g-leaf" + (d.demvotes === d.repvotes ? " g-tie" : ""); })
+        .attr("transform", "scale(0)");
+
+    leafEnter.append("circle")
+        .attr("r", 50);
+
+    leafEnter.append("path")
+        .attr("class", "g-check")
+        .attr("transform", "translate(-8,16)")
+        .attr("d", "M-20,-20L0,0L38,-38");
+
+    d3.transition(leaf.exit())
+        .attr("transform", "scale(0)")
+        .remove();
+
+    nodeExit.select(".g-leaf")
+        .attr("transform", "scale(0)");
+
+    d3.transition(leaf)
+        .attr("transform", function(d) { return "scale(" + radius(d.depth) + ")scale(.02)"; });
+  }
+
+  function updateVoronoi() {
+    svg.select(".g-voronoi").remove();
+
+    svg.append("g")
+        .attr("class", "g-voronoi")
+        .call(voronoi, nodes);
+  }
+
+  function updateScoreboard() {
+    var demPaths = 0,
+        repPaths = 0,
+        tiePaths = 0;
+
+    nodes.forEach(function(d) {
+      if (!d.children) {
+        var n = Math.pow(2, states.length - d.depth);
+        if (d.demvotes > d.repvotes) demPaths += n;
+        else if (d.repvotes > d.demvotes) repPaths += n;
+        else tiePaths += n;
+      }
+    });
+
+    //
+    kicker.text("With " + formatNumber(states.length) + " state" + (states.length > 1 ? "s" : "") + " undecided:");
+    scoreboard.select(".g-prefix.g-dem .g-score").text(demPaths);
+    scoreboard.select(".g-prefix.g-dem .g-suffix").text(" way" + ((demPaths === 1) ? "" : "s") + " to win");
+    scoreboard.select(".g-prefix.g-rep .g-score").text(repPaths);
+    scoreboard.select(".g-prefix.g-rep .g-suffix").text(" way" + ((repPaths === 1) ? "" : "s") + " to win");
+    scoreboard.select(".g-prefix.g-tie .g-score").text(tiePaths);
+    scoreboard.select(".g-prefix.g-tie .g-suffix").text(" tie" + ((tiePaths === 1) ? "" : "s"));
+
+    //
+    var totalPaths = 1 << states.length;
+    scoreboard.select(".g-dem.g-ratio").text(formatPercent(demPaths / totalPaths) + " of paths");
+    scoreboard.select(".g-rep.g-ratio").text(formatPercent(repPaths / totalPaths) + " of paths");
+    scoreboard.select(".g-tie.g-ratio").text(formatPercent(tiePaths / totalPaths) + " of paths");
+
+    if (nodes.length === 1) {
+      endAlert.select(".g-output").text((root.demvotes > root.repvotes ? "Obama wins" : root.demvotes < root.repvotes ? "Romney wins" : "the candidates tie") + " in all scenarios.");
+      endAlert.transition().style("opacity", 1);
+      if (root.demvotes > root.repvotes) {
+        d3.select(".g-heads .g-dem").style("opacity", 1).style("left", "-100px");
+        d3.select(".g-heads .g-rep").style("opacity", 0).style("left", "-100px");
+      } else if (root.demvotes < root.repvotes) {
+        d3.select(".g-heads .g-rep").style("opacity", 1).style("left", "-100px");
+        d3.select(".g-heads .g-dem").style("opacity", 0).style("left", "-100px");
+      } else {
+        d3.select(".g-heads .g-dem").style("opacity", 1).style("left", "-220px");
+        d3.select(".g-heads .g-rep").style("opacity", 1).style("left", "20px");
+      }
+    } else {
+      endAlert.transition().style("opacity", 0);
+      d3.select(".g-heads .g-dem").style("opacity", 0);
+      d3.select(".g-heads .g-rep").style("opacity", 0);
+    }
+  }
+
+  function reset() {
+    controlButton.filter(function(d) { return d.outcome === d.state.enabledParty; }).each(change);
+  }
+
+  function change(view) {
+    var key = view.state.code + "=" + view.outcome;
+
+    if (view.state.enabledParty) {
+      root[view.state.enabledParty + "votes"] -= view.state.votes;
+      states.splice(bisect(states, view.state.index), 0, view.state);
+    }
+
+    var i = bisect(oldStates, view.state.index) + 1;
+
+    if (view.outcome === view.state.enabledParty) {
+      view.state.enabledParty = null;
+
+      // Add the exiting state to nodes below.
+      nodes.forEach(function(d) {
+        if (d.depth >= i) d.key = d.key.split("&").concat(key).sort().join("&");
+      });
+    } else {
+      if ((root[view.outcome + "votes"] += view.state.votes) >= 270) root.party = view.outcome;
+      view.state.enabledParty = view.outcome;
+      states.splice(states.indexOf(view.state), 1);
+
+      // Remove the entering state from nodes below.
+      var k = new RegExp("&" + key + "|" + key + "&");
+      nodes.forEach(function(d) {
+        if (d.depth > i) d.key = d.key.replace(k, "");
+      });
+    }
+  }
+
+  function transition() {
+    controlButton.classed("g-active", function(d) { return d.state.enabledParty === d.outcome; });
+    resetButton.style("display", states.length < y.domain()[1] ? "block" : "none");
+
+    // Old node positions indexed by new key are needed for enter transitions.
+    oldNodesByKey = {};
+    nodes.forEach(function(d) { oldNodesByKey[d.key] = d; });
+
+    d3.transition().duration(d3.event.altKey ? 7500 : 750).each(update);
+
+    // The previous states are needed when multiple changes are made pre-transition.
+    oldStates = states.slice();
+  }
+
+  function click(d) {
+    mouseout(d);
+    var p = d.parent;
+    while (p) {
+      if (p.parent === root) { d = p; break; }
+      p = p.parent;
+    }
+    if (d !== root) {
+      change({state: d.state, outcome: d.party});
+      transition();
+    }
+  }
+
+  function mouseover(d) {
+    activate(d, true);
+    svg.attr("class", "g-" + d.party);
+    node.filter(function(d) { return d.active; }).classed("g-active", true);
+    link.filter(function(d) { return d.target.active; }).classed("g-active", true).attr("marker-end", 
+
+function(d) { return "url(#g-arrowhead-" + d.target.party + "-active)"; });
+    state.attr("class", function(d) { return "g-state" + (d.activeParty ? " g-" + d.activeParty : ""); });
+  }
+
+  function mouseout(d) {
+    node.filter(function(d) { return d.active; }).classed("g-active", false);
+    link.filter(function(d) { return d.target.active; }).classed("g-active", false).attr("marker-end", function(d) { return "url(#g-arrowhead-" + d.target.party + ")"; });
+    state.attr("class", "g-state");
+    activate(d, false);
+  }
+
+  function activate(d, active) {
+    d.active = active;
+    d.state.activeParty = active ? d.party : null;
+    d.parent && activate(d.parent, active);
+  }
+
+  function voronoi(g, nodes) {
+    nodes = nodes.filter(function(d) { return !d.children; });
+
+    var x0 = -margin.left, y0 = 0,
+        x1 = width + margin.right, y1 = height + margin.left,
+        xy = d3.geom.polygon([[x0, y0], [x0, y1], [x1, y1], [x1, y0]]);
+
+    var path = g.selectAll("path")
+        .data(d3.geom.voronoi(nodes.map(function(d) { return [d.x, y(d.depth)]; })));
+
+    path.enter().append("path")
+        .on("mouseover", mouseover)
+        .on("mouseout", mouseout)
+        .on("mousedown", function() { d3.event.preventDefault(); })
+        .on("dblclick", click);
+
+    path.attr("d", function(d) { return "M" + xy.clip(d).join("L") + "Z"; })
+        .datum(function(d, i) { return nodes[i]; });
+
+    path.exit().remove();
+  }
+
+  function key(d) {
+    if (!d.parent) return "_root";
+    var k = [], p = d;
+    while (p && p.party) k.push(p.state.code + "=" + p.party), p = p.parent;
+    return k.sort().join("&");
+  }
+
+  function findParent(d) {
+    var p = d.parent;
+    while (p) {
+      if ((d = nodesByKey[p.key]) && d.update) return d;
+      p = p.parent;
+    }
+    return root;
+  }
+
+  function findOldParent(d) {
+    var p = findParent(d);
+    return oldNodesByKey ? oldNodesByKey[p.key] : p;
+  }
+//comment this out from d3.tsv above since data provided by R
+//});
+
+function ascendingDepth(b, a) {
+  return a.target.depth - b.target.depth;
+}
+
+function radius(depth) {
+  return Math.pow(2, 5.8 - depth / 2);
+}
+
+function diagonal(d) {
+  var x0 = d.source.x, y0 = y(d.source.depth),
+      x1 = d.target.x, y1 = y(d.target.depth);
+  if (x0 < x1) x0 += w(d.target.probability) / 2;
+  else if (x0 > x1) x0 -= w(d.target.probability) / 2;
+  return "M" + x0 + "," + y0
+      + "C" + x0 + "," + (y0 + y1) / 2
+      + "," + x1 + "," + (y0 + y1) / 2
+      + "," + x1 + "," + y1;
+}
+
+})();
+
+</script>
 

@@ -30,12 +30,11 @@ data <- read.delim(file = "data/states.tsv")
 p1 <- rCharts$new()
 p1$field("lib", "512paths")
 p1$set(data = toJSONArray(data))
-p1
 p1$print("g-chart")
 ```
 
 <div id='g-chart' class='rChart nvd3Plot 512paths'></div>
-﻿<div class="g-controls"></div>
+<div class="g-controls"></div>
 <div class="g-chart">
 </div>
 <div class="g-scenario-group">

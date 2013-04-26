@@ -29,6 +29,5 @@ data <- read.delim(file = "data/states.tsv")
 p1 <- rCharts$new()
 p1$field( 'lib', '512paths' )
 p1$set( data = toJSONArray( data ) )
-p1
 p1$print( 'g-chart' )
 ```

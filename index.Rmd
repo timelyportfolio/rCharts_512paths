@@ -19,7 +19,8 @@ assets:
 
 ## [NYTimes 512 Paths to the White House](http://www.nytimes.com/interactive/2012/11/02/us/politics/paths-to-the-white-house.html?_r=1&) Recreated in [R](http://r-project.org) with [rCharts](http://ramnathv.github.io/rCharts) and [slidify](http://ramnathv.github.io/slidify). 
 
-**I claim absolutely no credit for this visualization, which I consider as one of the most instructive I have ever seen.  If anybody believes this to be not fair use, I will take it down immediately.**  The only changes to the code remove dependencies on NYT for the d3 and svg/png graphics.  Also, as an illustration of how we can do this, data is provided from R rather than the original d3.tsv method.
+**I claim absolutely no credit for this visualization, which I consider as one of the most instructive I have ever seen.  If anybody believes this to be not fair use, I will take it down immediately.**    
+The only changes to the code remove dependencies on NYT for the d3 and svg/png graphics.  Also, as an illustration of how we can do this, data is provided from R rather than the original d3.tsv method.
 
 ```{r results='asis'}
 require(rCharts)

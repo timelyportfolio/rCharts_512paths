@@ -3,7 +3,7 @@ title: rCharts Version of Famous NYTimes 512 Paths
 subtitle: Interactive JS Charts from R
 author: Timely Portfolio
 github: {user: timelyportoflio, repo: rCharts_512Paths, branch: "gh-pages"}
-framework: bootstrap
+framework: minimal
 mode: selfcontained
 widgets: [512paths]
 highlighter: highlight.js

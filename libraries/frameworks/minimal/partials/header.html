@@ -1,0 +1,40 @@
+<header>
+  <h1>{{{ page.title }}}</h1>
+  <p>{{{ page.subtitle }}}</p>
+  <pre><code class='r'>require(devtools)
+install_github('rCharts', 'ramnathv')</code></pre>
+  {{# page.github }}
+  <p class="view">
+    <a href="http://github.com/{{user}}/{{repo}}">
+     View the Project on GitHub <small>{{user}}/{{repo}}</small>
+    </a>
+  </p>
+  <ul class='buttons'>
+    <li><a href="https://github.com/{{user}}/{{repo}}/zipball/{{branch}}">
+      Download <strong>ZIP File</strong>
+    </a></li>
+    <li><a href="https://github.com/{{user}}/{{repo}}/tarball/{{branch}}">
+      Download <strong>TAR Ball</strong>
+    </a></li>
+    <li><a href="http://github.com/{{user}}/{{repo}}">
+      Fork On <strong>GitHub</strong></a>
+    </li>
+  </ul>
+  {{/ page.github }}
+  <h3>Fully Reproducible</h3>
+  <p>Download repo and run.</p>
+  <pre><code class='r'>setwd('{{ page.github.repo }}')
+  
+# reproduce the post
+require(slidify) # dev version
+slidify('index.Rmd')      
+system('open index.html') 
+</code></pre>
+    <ol>
+    {{# page.menu }}
+      <p>{{{ . }}}</p>
+    {{/ page.menu }}
+    </ol>
+</header>
+
+

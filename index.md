@@ -6,8 +6,8 @@ github: {user: timelyportfolio, repo: rCharts_512Paths, branch: "gh-pages"}
 framework: bootstrap
 mode: selfcontained
 widgets: [512paths]
-highlighter: prettify.js
-hitheme: solarized_dark
+highlighter: prettify
+hitheme: twitter-boostrap
 assets:
   css: 
     - "http://fonts.googleapis.com/css?family=Open+Sans"

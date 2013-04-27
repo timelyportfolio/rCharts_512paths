@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="libraries/frameworks/bootstrap/css/bootstrap-responsive.min.css">
   
   <link rel="stylesheet" href="libraries/frameworks/bootstrap/css/main.css">
-  <link rel="stylesheet" href="libraries/highlighters/prettify.js/css/solarized_dark.css" />
+  <link rel="stylesheet" href="libraries/highlighters/prettify/css/twitter-boostrap.css" />
   <script src="libraries/frameworks/bootstrap/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="libraries/frameworks/bootstrap/js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
@@ -761,5 +761,15 @@ function diagonal(d) {
   <script src="libraries/frameworks/bootstrap/js/main.js"></script>
   <!-- Load Javascripts for Widgets -->
   
-   
+  <!-- Google Prettify -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+  <script src='libraries/highlighters/prettify/js/lang-r.js'></script>
+  <script>
+    var pres = document.getElementsByTagName("pre");
+    for (var i=0; i < pres.length; ++i) {
+      pres[i].className = "prettyprint ";
+    }
+    prettyPrint();
+  </script>
+  <!-- End Google Prettify --> 
   </html>

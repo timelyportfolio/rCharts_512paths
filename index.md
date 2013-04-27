@@ -3,7 +3,7 @@ title: rCharts Version of Famous NYTimes 512 Paths
 subtitle: Interactive JS Charts from R
 author: Timely Portfolio
 github: {user: timelyportfolio, repo: rCharts_512Paths, branch: "gh-pages"}
-framework: minimal
+framework: bootstrap
 mode: selfcontained
 widgets: [512paths]
 highlighter: highlight.js
@@ -17,7 +17,8 @@ assets:
 
 
 
-## NYTimes [512 Paths to the White House](http://www.nytimes.com/interactive/2012/11/02/us/politics/paths-to-the-white-house.html?_r=1&) Recreated in [R](http://r-project.org) with [rCharts](http://ramnathv.github.io/rCharts) and [slidify](http://ramnathv.github.io/slidify). 
+## NY Times [512 Paths to the White House](http://www.nytimes.com/interactive/2012/11/02/us/politics/paths-to-the-white-house.html?_r=1&)
+## Recreated in [R](http://r-project.org) with [rCharts](http://ramnathv.github.io/rCharts) and [slidify](http://ramnathv.github.io/slidify)
 <br/>
 _ _ _
 **I claim absolutely no credit for this visualization, which I consider one of the most instructive I have ever seen.  If anybody believes this to be not fair use, I will take it down immediately.**   
@@ -81,6 +82,13 @@ Follow the steps below to go from the NYT feature to something we can render fro
 # install_github('rCharts', 'ramnathv')
 
 require(rCharts)
+```
+
+```
+## Loading required package: rCharts
+```
+
+```r
 # get data from downloaded NYT tsv and inject in through params
 data <- read.delim(file = "data/states.tsv")
 p1 <- rCharts$new()

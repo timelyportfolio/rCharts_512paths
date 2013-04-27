@@ -7,7 +7,7 @@ framework: bootstrap
 mode: selfcontained
 widgets: [512paths]
 highlighter: prettify
-hitheme: twitter-boostrap
+hitheme: twitter-bootstrap
 assets:
   css: 
     - "http://fonts.googleapis.com/css?family=Open+Sans"
@@ -35,7 +35,7 @@ Follow the steps below to go from the NYT feature to something we can render fro
 3.  **Open chart.html** from step 2 in a text editor.    
 4.  **Copy everything between the <style></style> tags** into a **new text file** that we will name **nyt_512.css** and **save in 512paths/external** created in step 1.    
 4.  **Delete everything in chart.html** except for the portion    
-    <pre>   
+    <pre class="html">   
       div class="g-controls"    
       ...    
         function diagonal(d) {    

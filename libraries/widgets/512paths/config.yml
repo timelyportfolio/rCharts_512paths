@@ -1,6 +1,0 @@
-512paths:
-  css: [external/nyt_512.css]
-  jshead: [external/d3.v3.min.js]
-  cdn:
-    jshead:
-      - http://d3js.org/d3.v3.min.js

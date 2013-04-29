@@ -5,7 +5,7 @@ author: Timely Portfolio
 github: {user: timelyportfolio, repo: rCharts_512Paths, branch: "gh-pages"}
 framework: bootstrap
 mode: selfcontained
-widgets: [512paths]
+widgets: [x512paths]
 highlighter: prettify
 hitheme: twitter-bootstrap
 assets:
@@ -15,25 +15,45 @@ assets:
 ---
 
 
-
+<a href="https://github.com/timelyportfolio/rCharts_512paths"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
 
 ## NY Times [512 Paths to the White House](http://www.nytimes.com/interactive/2012/11/02/us/politics/paths-to-the-white-house.html?_r=1&)
-## Recreated in [R](http://r-project.org) with [rCharts](http://ramnathv.github.io/rCharts) and [slidify](http://ramnathv.github.io/slidify)
+### Recreated in [R](http://r-project.org) with [rCharts](http://ramnathv.github.io/rCharts) and [slidify](http://ramnathv.github.io/slidify)
 <br/>
 _ _ _
 **I claim absolutely no credit for this visualization, which I consider one of the most instructive I have ever seen.  If anybody believes this to be not fair use, I will take it down immediately.**   
 <br/>
 - - -
 
-Follow the steps below to go from the NYT feature to something we can render from R.  If you are lazy or impatient, you can just copy the 512paths directory from [Github](https://github.com/timelyportfolio/rCharts_512paths/tree/gh-pages/rCharts_512paths) into /PathToR/libraries/rCharts and skip past the steps.
+We will provide a detailed tutorial below to go from the NYT feature to something we can render from R, but for now you can just copy the rCharts_512paths directory from [Github](https://github.com/timelyportfolio/rCharts_512paths/tree/gh-pages/rCharts_512paths) into your R working directory.  Then simply run the following couple lines of code in R.
+
+```{r results='asis'}
+#if you have not installed slidify, slidifyLibraries, or rCharts
+#require(devtools)
+#install_github('rCharts', 'slidify', ref = 'dev')
+#install_github('rCharts', 'slidfyLibraries', ref = 'dev')
+#install_github('rCharts', 'ramnathv')
+
+require(rCharts)
+#get data from downloaded NYT tsv and inject in through params
+data <- read.delim(file = "data/states.tsv")
+p1 <- rCharts$new()
+p1$field( 'lib', 'libraries/widgets/x512paths' )
+p1$set( data = toJSONArray( data ) )
+p1
+```
+```{r,results='asis',echo=FALSE}
+p1$print( 'g-chart' )
+```
+
 <br/>
 <br/>
 ### Steps to Accomplish
-1.  In Path-to-R/library/rCharts/, **create a new directory 512paths**.  Within this new 512paths, set up two subdirectories: **external** and **layouts**.    
-2.  **Save** [iframe.html](http://www.nytimes.com/newsgraphics/2012/10/12/electoral-calculator/7feadbc7606af9ce0e5d242e1ba75fd53717da7d/iframe.html) from the NYT **into the new 512paths/layouts directory from step 1**.  This isolates the visualization, so we can use it for our template.    
+1.  In your pathtoRexecutable/libraries/rCharts/libraries/, **create a new directory x512paths**.  We choose x512paths, since shiny does not like paths that start with a number.  Within this new x512paths, set up two subdirectories: **external** and **layouts**.    
+2.  **Save** [iframe.html](http://www.nytimes.com/newsgraphics/2012/10/12/electoral-calculator/7feadbc7606af9ce0e5d242e1ba75fd53717da7d/iframe.html) from the NYT **into the new x512paths/layouts directory from step 1**.  This isolates the visualization, so we can use it for our template.    
 3.  **Rename iframe.html to chart.html**.    
 3.  **Open chart.html** from step 2 in a text editor.    
-4.  **Copy everything between the <style></style> tags** into a **new text file** that we will name **nyt_512.css** and **save in 512paths/external** created in step 1.    
+4.  **Copy everything between the <style></style> tags** into a **new text file** that we will name **nyt_512.css** and **save in x512paths/external** created in step 1.    
 4.  **Delete everything in chart.html** except for the portion    
     <pre class="html">   
       div class="g-controls"    
@@ -60,10 +80,10 @@ Follow the steps below to go from the NYT feature to something we can render fro
     <pre>
     d3.tsv("http://timelyportfolio.github.io/rCharts_512paths/data/states.tsv", function(error, states) {    
     </pre>
-5.  Save [d3.v3.min.js](http://d3js.org/d3.v3.min.js) into 512paths/external created in step 1.
-6.  Create a new text file that we will call config.yml and save in the 512paths from step 1.
+5.  Save [d3.v3.min.js](http://d3js.org/d3.v3.min.js) into x512paths/external created in step 1.
+6.  Create a new text file that we will call config.yml and save in the x512paths from step 1.
     <pre>  
-    512paths:    
+    x512paths:    
         css: [external/nyt_512.css]    
         jshead: [external/d3.v3.min.js]    
         cdn:    
@@ -72,26 +92,9 @@ Follow the steps below to go from the NYT feature to something we can render fro
     </pre>
 7.  Now is a good time to check your directory structure.  It should look like the picture below.    
   ![picture of directory structure](images/dir_struct.png)
-8.  Run the following code in R.
+8.  Now Run the following code in R.
 
-```{r results='hide'}
-#if you have not installed slidify, slidifyLibraries, or rCharts
-#require(devtools)
-#install_github('rCharts', 'slidify', ref = 'dev')
-#install_github('rCharts', 'slidfyLibraries', ref = 'dev')
-#install_github('rCharts', 'ramnathv')
-
-require(rCharts)
-#get data from downloaded NYT tsv and inject in through params
-data <- read.delim(file = "data/states.tsv")
-p1 <- rCharts$new()
-p1$field( 'lib', '512paths' )
-p1$set( data = toJSONArray( data ) )
-p1
-```
 
 As a disclaimer, I made some unnecessary adjustments primarily for politeness.  The only changes to the code remove dependencies on NYT for the d3 and svg/png graphics.  Also, as an illustration of how we can do this, data is provided from R rather than the original d3.tsv method.  If you are interested in these changes, feel free to explore the [code](http://github.com/timelyportfolio/rCharts_512paths).
 
-```{r results='asis',echo=FALSE,warnings=FALSE,message=FALSE}
-p1$print( 'g-chart' )
-```
+

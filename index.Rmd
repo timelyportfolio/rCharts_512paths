@@ -113,7 +113,7 @@ p1
 ```
 
 
-As a disclaimer, I made some unnecessary adjustments not documented above primarily for politeness.  The only changes to the code remove dependencies on NYT for the d3 and svg/png graphics.  Also, as an illustration of how we can do this, data is provided from R rather than the original d3.tsv method.  If you are interested in these changes, feel free to explore the [code](http://github.com/timelyportfolio/rCharts_512paths).
+As a disclaimer, I made some unnecessary adjustments not documented above.  These were primarily for politeness.  The only changes to the code remove dependencies on NYT for the d3 and svg/png graphics.  Also, as an illustration of how we can do this, data is provided from R rather than the original d3.tsv method.  If you are interested in these changes, feel free to explore the [code](http://github.com/timelyportfolio/rCharts_512paths).
 
 <br/>
 ### Thanks to:

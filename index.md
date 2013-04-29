@@ -723,7 +723,7 @@ require(rCharts)
 # get data from downloaded NYT tsv and inject in through params
 data <- read.delim(file = "data/states.tsv")
 p1 <- rCharts$new()
-p1$field("lib", "x512paths")
+p1$field("lib", "pathtoyournewdirectory/x512paths")
 p1$set(data = toJSONArray(data))
 p1
 ```

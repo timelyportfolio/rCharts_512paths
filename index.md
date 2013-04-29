@@ -702,9 +702,13 @@ function diagonal(d) {
     </pre>
 7.  Now is a good time to check your directory structure.  It should look like the picture below.    
   ![picture of directory structure](images/dir_struct.png)
-8.  Now Run the following code in R.
+8.  Now try to reRun the code above in R.
 
 
 As a disclaimer, I made some unnecessary adjustments primarily for politeness.  The only changes to the code remove dependencies on NYT for the d3 and svg/png graphics.  Also, as an illustration of how we can do this, data is provided from R rather than the original d3.tsv method.  If you are interested in these changes, feel free to explore the [code](http://github.com/timelyportfolio/rCharts_512paths).
 
+<br/>
+### Thanks to:
+- **Ramnath Vaidyanathan** for his incredible slidify, rCharts, and more specifically help with this post
+- **Mike Bostock** for [d3](http://d3js.org), countless examples, and published NY Times greatness
 

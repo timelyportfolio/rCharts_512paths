@@ -683,7 +683,7 @@ function diagonal(d) {
       })();    
       \<\/script\>
     </pre>
-5.  Change the line
+5.  **Change the line**
     <pre>
     d3.tsv("states.tsv", function(error, states) {    
     </pre>
@@ -691,8 +691,8 @@ function diagonal(d) {
     <pre>
     d3.tsv("http://timelyportfolio.github.io/rCharts_512paths/data/states.tsv", function(error, states) {    
     </pre>
-5.  Save [d3.v3.min.js](http://d3js.org/d3.v3.min.js) into x512paths/external created in step 1.
-6.  Create a new text file that we will call config.yml and save in the x512paths from step 1.
+5.  **Save** [d3.v3.min.js](http://d3js.org/d3.v3.min.js) into x512paths/external created in step 1.
+6.  **Create a new** text file that we will call **config.yml** and save in the x512paths from step 1.
     <pre>  
     x512paths:    
         css: [external/nyt_512.css]    

@@ -59,8 +59,7 @@
 
 <hr>
 
-<p><strong>I claim absolutely no credit for this visualization, which I consider one of the most instructive I have ever seen.  If anybody believes this to be not fair use, I will take it down immediately.</strong><br>
-<br/></p>
+<p><strong>I claim absolutely no credit for this visualization, which I consider one of the most instructive I have ever seen.  If anybody believes this to be not fair use, I will take it down immediately.</strong>   </p>
 
 <hr>
 
@@ -70,6 +69,8 @@
 # require(devtools) install_github(&#39;rCharts&#39;, &#39;slidify&#39;, ref = &#39;dev&#39;)
 # install_github(&#39;rCharts&#39;, &#39;slidfyLibraries&#39;, ref = &#39;dev&#39;)
 # install_github(&#39;rCharts&#39;, &#39;ramnathv&#39;)
+
+# setwd(&#39;rCharts_512paths&#39;)
 
 require(rCharts)
 # get data from downloaded NYT tsv and inject in through params
@@ -759,7 +760,7 @@ x512paths:
 <pre><code class="r">p1$field(&quot;lib&quot;, &quot;x512paths&quot;)
 </code></pre>
 
-<p>If lib is not a path, then rCharts will look in its own directory for our new widget/template.</p>
+<p>If lib is not a path, then rCharts will look in its own directory for our new widget/template.  Your couple of lines of code should look something like this, and hopefully, it will run.</p>
 
 <pre><code class="r">require(rCharts)
 # get data from downloaded NYT tsv and inject in through params
@@ -770,7 +771,7 @@ p1$set(data = toJSONArray(data))
 p1
 </code></pre>
 
-<p>As a disclaimer, I made some unnecessary adjustments not documented above primarily for politeness.  The only changes to the code remove dependencies on NYT for the d3 and svg/png graphics.  Also, as an illustration of how we can do this, data is provided from R rather than the original d3.tsv method.  If you are interested in these changes, feel free to explore the <a href="http://github.com/timelyportfolio/rCharts_512paths">code</a>.</p>
+<p>As a disclaimer, I made some unnecessary adjustments not documented above.  These were primarily for politeness.  The only changes to the code remove dependencies on NYT for the d3 and svg/png graphics.  Also, as an illustration of how we can do this, data is provided from R rather than the original d3.tsv method.  If you are interested in these changes, feel free to explore the <a href="http://github.com/timelyportfolio/rCharts_512paths">code</a>.</p>
 
 <p><br/></p>
 

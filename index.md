@@ -22,7 +22,6 @@ assets:
 <br/>
 _ _ _
 **I claim absolutely no credit for this visualization, which I consider one of the most instructive I have ever seen.  If anybody believes this to be not fair use, I will take it down immediately.**   
-<br/>
 - - -
 
 We will provide a detailed tutorial below to go from the NYT feature to something we can render from R, but for now you can just copy the rCharts_512paths directory from [Github](https://github.com/timelyportfolio/rCharts_512paths/tree/gh-pages/rCharts_512paths) into your R working directory.  Then simply run the following couple lines of code in R.
@@ -33,6 +32,8 @@ We will provide a detailed tutorial below to go from the NYT feature to somethin
 # require(devtools) install_github('rCharts', 'slidify', ref = 'dev')
 # install_github('rCharts', 'slidfyLibraries', ref = 'dev')
 # install_github('rCharts', 'ramnathv')
+
+# setwd('rCharts_512paths')
 
 require(rCharts)
 # get data from downloaded NYT tsv and inject in through params
@@ -714,7 +715,7 @@ to
 p1$field("lib", "x512paths")
 ```
 
-If lib is not a path, then rCharts will look in its own directory for our new widget/template.
+If lib is not a path, then rCharts will look in its own directory for our new widget/template.  Your couple of lines of code should look something like this, and hopefully, it will run.
 
 
 ```r
@@ -729,7 +730,7 @@ p1
 
 
 
-As a disclaimer, I made some unnecessary adjustments not documented above primarily for politeness.  The only changes to the code remove dependencies on NYT for the d3 and svg/png graphics.  Also, as an illustration of how we can do this, data is provided from R rather than the original d3.tsv method.  If you are interested in these changes, feel free to explore the [code](http://github.com/timelyportfolio/rCharts_512paths).
+As a disclaimer, I made some unnecessary adjustments not documented above.  These were primarily for politeness.  The only changes to the code remove dependencies on NYT for the d3 and svg/png graphics.  Also, as an illustration of how we can do this, data is provided from R rather than the original d3.tsv method.  If you are interested in these changes, feel free to explore the [code](http://github.com/timelyportfolio/rCharts_512paths).
 
 <br/>
 ### Thanks to:

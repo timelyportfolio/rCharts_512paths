@@ -702,10 +702,34 @@ function diagonal(d) {
     </pre>
 7.  Now is a good time to check your directory structure.  It should look like the picture below.    
   ![picture of directory structure](images/dir_struct.png)
-8.  Now try to reRun the code above in R.
+8.  Try to rerun the code above in R, but change the
+
+```r
+p1$field("lib", "libraries/widgets/x512paths")
+```
+
+to
+
+```r
+p1$field("lib", "x512paths")
+```
+
+If lib is not a path, then rCharts will look in its own directory for our new widget/template.
 
 
-As a disclaimer, I made some unnecessary adjustments primarily for politeness.  The only changes to the code remove dependencies on NYT for the d3 and svg/png graphics.  Also, as an illustration of how we can do this, data is provided from R rather than the original d3.tsv method.  If you are interested in these changes, feel free to explore the [code](http://github.com/timelyportfolio/rCharts_512paths).
+```r
+require(rCharts)
+# get data from downloaded NYT tsv and inject in through params
+data <- read.delim(file = "data/states.tsv")
+p1 <- rCharts$new()
+p1$field("lib", "x512paths")
+p1$set(data = toJSONArray(data))
+p1
+```
+
+
+
+As a disclaimer, I made some unnecessary adjustments not documented above primarily for politeness.  The only changes to the code remove dependencies on NYT for the d3 and svg/png graphics.  Also, as an illustration of how we can do this, data is provided from R rather than the original d3.tsv method.  If you are interested in these changes, feel free to explore the [code](http://github.com/timelyportfolio/rCharts_512paths).
 
 <br/>
 ### Thanks to:

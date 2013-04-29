@@ -748,10 +748,29 @@ x512paths:
 </pre></li>
 <li><p>Now is a good time to check your directory structure.  It should look like the picture below.<br>
 <img src="images/dir_struct.png" alt="picture of directory structure"></p></li>
-<li><p>Now try to reRun the code above in R.</p></li>
+<li><p>Try to rerun the code above in R, but change the</p></li>
 </ol>
 
-<p>As a disclaimer, I made some unnecessary adjustments primarily for politeness.  The only changes to the code remove dependencies on NYT for the d3 and svg/png graphics.  Also, as an illustration of how we can do this, data is provided from R rather than the original d3.tsv method.  If you are interested in these changes, feel free to explore the <a href="http://github.com/timelyportfolio/rCharts_512paths">code</a>.</p>
+<pre><code class="r">p1$field(&quot;lib&quot;, &quot;libraries/widgets/x512paths&quot;)
+</code></pre>
+
+<p>to</p>
+
+<pre><code class="r">p1$field(&quot;lib&quot;, &quot;x512paths&quot;)
+</code></pre>
+
+<p>If lib is not a path, then rCharts will look in its own directory for our new widget/template.</p>
+
+<pre><code class="r">require(rCharts)
+# get data from downloaded NYT tsv and inject in through params
+data &lt;- read.delim(file = &quot;data/states.tsv&quot;)
+p1 &lt;- rCharts$new()
+p1$field(&quot;lib&quot;, &quot;x512paths&quot;)
+p1$set(data = toJSONArray(data))
+p1
+</code></pre>
+
+<p>As a disclaimer, I made some unnecessary adjustments not documented above primarily for politeness.  The only changes to the code remove dependencies on NYT for the d3 and svg/png graphics.  Also, as an illustration of how we can do this, data is provided from R rather than the original d3.tsv method.  If you are interested in these changes, feel free to explore the <a href="http://github.com/timelyportfolio/rCharts_512paths">code</a>.</p>
 
 <p><br/></p>
 

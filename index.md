@@ -715,7 +715,7 @@ to
 p1$field("lib", "pathtoyournewdirectory/x512paths")
 ```
 
-If lib is not a path, then rCharts will look in its own directory for our new widget/template.  Your couple of lines of code should look something like this, and hopefully, it will run.
+so your couple of lines of code should look something like this.
 
 
 ```r
@@ -723,6 +723,7 @@ require(rCharts)
 # get data from downloaded NYT tsv and inject in through params
 data <- read.delim(file = "data/states.tsv")
 p1 <- rCharts$new()
+# make sure to change this path to your newly created masterpiece
 p1$field("lib", "pathtoyournewdirectory/x512paths")
 p1$set(data = toJSONArray(data))
 p1

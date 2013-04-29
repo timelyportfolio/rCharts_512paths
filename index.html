@@ -63,7 +63,7 @@
 
 <hr>
 
-<p>We will provide a detailed tutorial below to go from the NYT feature to something we can render from R, but for now you can just copy the rCharts_512paths directory from <a href="https://github.com/timelyportfolio/rCharts_512paths/tree/gh-pages/rCharts_512paths">Github</a> into your R working directory.  Then simply run the following couple lines of code in R.</p>
+<p>We will provide a detailed tutorial below to go from the NYT feature to something we can render from R, but for now you can just download the rCharts_512paths directory from <a href="https://github.com/timelyportfolio/rCharts_512paths/tree/gh-pages/rCharts_512paths">Github</a>.  Set your working directory (setwd) to your download location.  Then simply run the following couple lines of code in R.</p>
 
 <pre><code class="r"># if you have not installed slidify, slidifyLibraries, or rCharts
 # require(devtools) install_github(&#39;rCharts&#39;, &#39;slidify&#39;, ref = &#39;dev&#39;)
@@ -701,7 +701,7 @@ function diagonal(d) {
 <h3>Steps to Accomplish</h3>
 
 <ol>
-<li> In your pathtoRexecutable/libraries/rCharts/libraries/, <strong>create a new directory x512paths</strong>.  We choose x512paths, since shiny does not like paths that start with a number.  Within this new x512paths, set up two subdirectories: <strong>external</strong> and <strong>layouts</strong>.<br></li>
+<li> <strong>Create a new directory x512paths</strong> anywhere you like.  We choose x512paths, since shiny does not like paths that start with a number.  Within this new x512paths, set up two subdirectories: <strong>external</strong> and <strong>layouts</strong>.<br></li>
 <li> <strong>Save</strong> <a href="http://www.nytimes.com/newsgraphics/2012/10/12/electoral-calculator/7feadbc7606af9ce0e5d242e1ba75fd53717da7d/iframe.html">iframe.html</a> from the NYT <strong>into the new x512paths/layouts directory from step 1</strong>.  This isolates the visualization, so we can use it for our template.<br></li>
 <li> <strong>Rename iframe.html to chart.html</strong>.<br></li>
 <li> <strong>Open chart.html</strong> from step 2 in a text editor.<br></li>
@@ -757,7 +757,7 @@ x512paths:
 
 <p>to</p>
 
-<pre><code class="r">p1$field(&quot;lib&quot;, &quot;x512paths&quot;)
+<pre><code class="r">p1$field(&quot;lib&quot;, &quot;pathtoyournewdirectory/x512paths&quot;)
 </code></pre>
 
 <p>If lib is not a path, then rCharts will look in its own directory for our new widget/template.  Your couple of lines of code should look something like this, and hopefully, it will run.</p>

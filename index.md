@@ -29,9 +29,9 @@ We will provide a detailed tutorial below to go from the NYT feature to somethin
 
 ```r
 # if you have not installed slidify, slidifyLibraries, or rCharts
-# require(devtools) install_github('rCharts', 'slidify', ref = 'dev')
-# install_github('rCharts', 'slidfyLibraries', ref = 'dev')
-# install_github('rCharts', 'ramnathv')
+# require(devtools) install_github('slidify', 'ramnathv', ref = 'dev')
+# install_github('rCharts', 'ramnathv') install_github('slidifyLibraries',
+# 'ramnathv', ref = 'dev') # optional
 
 # setwd('rCharts_512paths')
 

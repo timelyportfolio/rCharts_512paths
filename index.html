@@ -65,23 +65,25 @@
 
 <p>We will provide a detailed tutorial below to go from the NYT feature to something we can render from R, but for now you can just download the rCharts_512paths directory from <a href="https://github.com/timelyportfolio/rCharts_512paths/tree/gh-pages/rCharts_512paths">Github</a>.  Set your working directory (setwd) to your download location.  Then simply run the following couple lines of code in R.</p>
 
-<pre><code class="r"># if you have not installed slidify, slidifyLibraries, or rCharts
-# require(devtools) install_github(&#39;slidify&#39;, &#39;ramnathv&#39;, ref = &#39;dev&#39;)
-# install_github(&#39;rCharts&#39;, &#39;ramnathv&#39;) install_github(&#39;slidifyLibraries&#39;,
-# &#39;ramnathv&#39;, ref = &#39;dev&#39;) # optional
+<pre><code class="r">#if you have not installed slidify, slidifyLibraries, or rCharts
+#require(devtools)
+#install_github(&#39;slidify&#39;, &#39;ramnathv&#39;, ref = &#39;dev&#39;)
+#install_github(&#39;rCharts&#39;, &#39;ramnathv&#39;)
+#install_github(&#39;slidifyLibraries&#39;, &#39;ramnathv&#39;, ref = &#39;dev&#39;) # optional
 
-# setwd(&#39;rCharts_512paths&#39;)
+#setwd(&quot;rCharts_512paths&quot;)
 
 require(rCharts)
-# get data from downloaded NYT tsv and inject in through params
+#get data from downloaded NYT tsv and inject in through params
 data &lt;- read.delim(file = &quot;data/states.tsv&quot;)
 p1 &lt;- rCharts$new()
-p1$field(&quot;lib&quot;, &quot;libraries/widgets/x512paths&quot;)
-p1$set(data = toJSONArray(data))
+p1$setLib(&#39;./libraries/widgets/x512paths&#39;)
+p1$field(&#39;lib&#39;, &#39;x512paths&#39;)
+p1$set( data = toJSONArray( data ) )
 p1
 </code></pre>
 
-<div id='g-chart' class='rChart nvd3Plot x512paths'></div>
+<div id = 'g-chart' class = 'rChart x512paths'></div>
 
 <div class="g-controls"></div>
 
@@ -695,6 +697,8 @@ function diagonal(d) {
 
 </script>
 
+<script></script>
+
 <p><br/>
 <br/></p>
 
@@ -752,23 +756,24 @@ x512paths:
 <li><p>Try to rerun the code above in R, but change the</p></li>
 </ol>
 
-<pre><code class="r">p1$field(&quot;lib&quot;, &quot;libraries/widgets/x512paths&quot;)
+<pre><code class="r">p1$setLib(&#39;./libraries/widgets/x512paths&#39;)
 </code></pre>
 
 <p>to</p>
 
-<pre><code class="r">p1$field(&quot;lib&quot;, &quot;pathtoyournewdirectory/x512paths&quot;)
+<pre><code class="r">p1$setLib( &#39;pathtoyournewdirectory/x512paths&#39; )
 </code></pre>
 
 <p>so your couple of lines of code should look something like this.</p>
 
 <pre><code class="r">require(rCharts)
-# get data from downloaded NYT tsv and inject in through params
+#get data from downloaded NYT tsv and inject in through params
 data &lt;- read.delim(file = &quot;data/states.tsv&quot;)
 p1 &lt;- rCharts$new()
-# make sure to change this path to your newly created masterpiece
-p1$field(&quot;lib&quot;, &quot;pathtoyournewdirectory/x512paths&quot;)
-p1$set(data = toJSONArray(data))
+#make sure to change this path to your newly created masterpiece
+p1$setLib(&#39;pathtoyournewdirectory/x512paths&#39;)
+p1$field(&#39;lib&#39;, &#39;x512paths&#39;)
+p1$set( data = toJSONArray( data ) )
 p1
 </code></pre>
 

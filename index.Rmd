@@ -39,7 +39,8 @@ require(rCharts)
 #get data from downloaded NYT tsv and inject in through params
 data <- read.delim(file = "data/states.tsv")
 p1 <- rCharts$new()
-p1$field( 'lib', 'libraries/widgets/x512paths' )
+p1$setLib('./libraries/widgets/x512paths')
+p1$field('lib', 'x512paths')
 p1$set( data = toJSONArray( data ) )
 p1
 ```
@@ -95,11 +96,11 @@ p1$print( 'g-chart' )
   ![picture of directory structure](images/dir_struct.png)
 8.  Try to rerun the code above in R, but change the
 ```{r,eval=FALSE}
-p1$field( 'lib', 'libraries/widgets/x512paths' )
+p1$setLib('./libraries/widgets/x512paths')
 ```
 to
 ```{r,eval=FALSE}
-p1$field( 'lib', 'pathtoyournewdirectory/x512paths' )
+p1$setLib( 'pathtoyournewdirectory/x512paths' )
 ```
 so your couple of lines of code should look something like this.
 
@@ -109,7 +110,8 @@ require(rCharts)
 data <- read.delim(file = "data/states.tsv")
 p1 <- rCharts$new()
 #make sure to change this path to your newly created masterpiece
-p1$field( 'lib', 'pathtoyournewdirectory/x512paths' )
+p1$setLib('pathtoyournewdirectory/x512paths')
+p1$field('lib', 'x512paths')
 p1$set( data = toJSONArray( data ) )
 p1
 ```
